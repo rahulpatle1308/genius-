@@ -1,96 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222 47% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 217 32% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 217 32% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 187 100% 42%;
+    --primary-foreground: 222 47% 4%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 217 32% 17%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 32% 12%;
+    --muted-foreground: 215 20% 55%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 187 100% 70%;
+    --accent-foreground: 222 47% 4%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 217 32% 20%;
+    --input: 217 32% 15%;
+    --ring: 187 100% 42%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 217 32% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 187 100% 42%;
+    --sidebar-primary-foreground: 222 47% 4%;
+    --sidebar-accent: 217 32% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 32% 20%;
+    --sidebar-ring: 187 100% 42%;
+
+    /* Custom tokens */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 0 0% 100%;
+    --teal-glow: 187 100% 42%;
+    --navy-deep: 222 47% 4%;
   }
 }
 
@@ -101,5 +60,121 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-[hsl(var(--glass-bg)/0.05)] backdrop-blur-xl border border-[hsl(var(--glass-border)/0.1)] rounded-3xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    background: hsl(var(--glass-bg) / 0.08);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.15);
+  }
+
+  .teal-gradient {
+    @apply bg-gradient-to-r from-[hsl(187,100%,42%)] to-[hsl(200,100%,36%)];
+  }
+
+  .teal-gradient-text {
+    @apply bg-gradient-to-r from-[hsl(187,100%,42%)] to-[hsl(187,100%,70%)] bg-clip-text text-transparent;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 40px hsl(var(--primary) / 0.4);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .mono-text {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .top-bar {
+    @apply h-10 teal-gradient text-[11px] font-bold uppercase tracking-widest flex items-center justify-center gap-6;
+    color: hsl(var(--navy-deep));
+  }
+
+  .glass-header {
+    @apply sticky top-0 z-50 w-full border-b border-[hsl(var(--glass-border)/0.05)];
+    background: hsl(var(--background) / 0.8);
+    backdrop-filter: blur(16px);
+  }
+
+  .badge-primary {
+    @apply inline-flex items-center rounded-full px-4 py-1.5 text-xs font-medium ring-1 ring-inset;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    --tw-ring-color: hsl(var(--primary) / 0.2);
+  }
+
+  .btn-teal {
+    @apply px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300;
+    background: linear-gradient(135deg, hsl(187,100%,42%), hsl(200,100%,36%));
+    color: hsl(var(--navy-deep));
+  }
+
+  .btn-teal:hover {
+    box-shadow: 0 0 20px hsl(187 100% 42% / 0.4);
+    transform: scale(1.02);
+  }
+
+  .btn-teal:active {
+    transform: scale(0.98);
+  }
+
+  .btn-outline-light {
+    @apply px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 border;
+    border-color: hsl(var(--foreground) / 0.3);
+    color: hsl(var(--foreground));
+  }
+
+  .btn-outline-light:hover {
+    border-color: hsl(var(--foreground) / 0.6);
+    background: hsl(var(--foreground) / 0.05);
+  }
+
+  .whatsapp-btn {
+    @apply px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2;
+    background: hsl(142 70% 45%);
+    color: hsl(0 0% 100%);
+  }
+
+  .whatsapp-btn:hover {
+    box-shadow: 0 0 20px hsl(142 70% 45% / 0.4);
+    transform: scale(1.02);
+  }
+
+  .service-icon-glow {
+    filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.6));
+  }
+
+  .timeline-line {
+    @apply absolute top-1/2 w-full h-px -z-10;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.5), transparent);
+  }
+}
+
+@layer utilities {
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
   }
 }
