@@ -32,7 +32,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex flex-col">
             <span className="text-xl md:text-2xl font-extrabold tracking-tight text-foreground">
-              ENG<span className="text-primary">PROOF</span>
+              ENG<span className="teal-gradient-text">PROOF</span>
             </span>
             <span className="text-[9px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">
               Secure. Develop. Innovate.
@@ -82,11 +82,11 @@ const Header = () => {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 8 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-1 w-64 py-2 rounded-xl glass-card shadow-2xl"
+                          className="absolute top-full left-0 mt-1 w-64 py-2 rounded-xl bg-card border border-border shadow-xl"
                         >
                           <Link
                             to="/services"
-                            className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
+                            className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
                           >
                             All Services
                           </Link>
@@ -95,7 +95,7 @@ const Header = () => {
                             <Link
                               key={s.name}
                               to={s.href}
-                              className="flex items-center gap-3 px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
+                              className="flex items-center gap-3 px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
                             >
                               <span>{s.icon}</span>
                               {s.name}
@@ -144,7 +144,7 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden overflow-hidden border-t border-border"
+            className="lg:hidden overflow-hidden border-t border-border bg-background"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) =>
@@ -181,7 +181,7 @@ const Header = () => {
                   </Link>
                 )
               )}
-              <div className="flex gap-3 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <a href="https://wa.me/917489741225" target="_blank" rel="noopener noreferrer" className="whatsapp-btn text-xs flex-1 justify-center">
                   <MessageCircle size={16} /> Chat Now
                 </a>

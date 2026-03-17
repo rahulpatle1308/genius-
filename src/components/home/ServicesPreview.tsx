@@ -44,9 +44,10 @@ const ServicesPreview = () => (
     <div className="container-wide mx-auto">
       <motion.div
         className="text-center mb-14"
-        initial={{ opacity: 0, y: 12 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
           Our Premium <span className="teal-gradient-text text-glow">Services</span>
@@ -56,15 +57,15 @@ const ServicesPreview = () => (
         </p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
         {services.map((service, i) => (
           <motion.div
             key={service.title}
-            className="glass-card-hover p-6 flex flex-col justify-between aspect-auto min-h-[280px]"
-            initial={{ opacity: 0, y: 20 }}
+            className="glass-card-hover p-5 sm:p-6 flex flex-col justify-between min-h-[260px]"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.04, duration: 0.4 }}
+            transition={{ delay: i * 0.08, duration: 0.5 }}
           >
             <div>
               <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">

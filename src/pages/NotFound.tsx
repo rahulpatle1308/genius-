@@ -1,5 +1,6 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const NotFound = () => {
   const location = useLocation();
@@ -9,14 +10,19 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <motion.div
+        className="text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="mb-4 text-6xl font-extrabold text-foreground">404</h1>
+        <p className="mb-6 text-xl text-muted-foreground">Oops! Page not found</p>
+        <Link to="/" className="btn-teal inline-block">
           Return to Home
-        </a>
-      </div>
+        </Link>
+      </motion.div>
     </div>
   );
 };
