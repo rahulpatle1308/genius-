@@ -19,7 +19,7 @@ const BackToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 left-6 z-50 w-11 h-11 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+          className="fixed bottom-5 left-5 sm:bottom-6 sm:left-6 z-50 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors shadow-md"
           aria-label="Back to top"
         >
           <ArrowUp size={18} />

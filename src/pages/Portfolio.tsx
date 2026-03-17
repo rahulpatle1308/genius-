@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const categories = ["All", "Websites", "Apps", "CCTV", "ID Cards", "Events"];
@@ -21,11 +21,11 @@ const Portfolio = () => {
     <Layout>
       <section className="section-padding">
         <div className="container-wide mx-auto">
-          <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
               Our <span className="teal-gradient-text">Success Stories</span>
             </h1>
-            <p className="text-lg text-muted-foreground">Real projects, real results</p>
+            <p className="text-base sm:text-lg text-muted-foreground">Real projects, real results</p>
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-2 mb-10">
@@ -42,26 +42,35 @@ const Portfolio = () => {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((p, i) => (
-              <motion.div
-                key={p.title}
-                className="glass-card-hover p-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-              >
-                <div className="h-40 rounded-xl bg-secondary/50 mb-4 flex items-center justify-center">
-                  <span className="text-3xl">📂</span>
-                </div>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">{p.category}</span>
-                <h3 className="text-base font-bold text-foreground mt-2 mb-1">{p.title}</h3>
-                <p className="text-xs text-muted-foreground mb-1">{p.client}</p>
-                <p className="text-sm text-muted-foreground mb-3">{p.desc}</p>
-                <div className="mono-text text-xs text-primary font-bold">{p.impact}</div>
-              </motion.div>
-            ))}
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={filter}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              {filtered.map((p, i) => (
+                <motion.div
+                  key={p.title}
+                  className="glass-card-hover p-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
+                >
+                  <div className="h-32 sm:h-40 rounded-xl bg-secondary/50 mb-4 flex items-center justify-center">
+                    <span className="text-3xl">📂</span>
+                  </div>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">{p.category}</span>
+                  <h3 className="text-base font-bold text-foreground mt-2 mb-1">{p.title}</h3>
+                  <p className="text-xs text-muted-foreground mb-1">{p.client}</p>
+                  <p className="text-sm text-muted-foreground mb-3">{p.desc}</p>
+                  <div className="mono-text text-xs text-primary font-bold">{p.impact}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
     </Layout>

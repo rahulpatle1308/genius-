@@ -70,35 +70,42 @@ const Services = () => (
   <Layout>
     <section className="section-padding">
       <div className="container-wide mx-auto">
-        <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+        <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
             Our <span className="teal-gradient-text">Comprehensive</span> Solutions
           </h1>
-          <p className="text-lg text-muted-foreground max-w-lg mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto">
             End-to-end technology and security services for modern businesses
           </p>
         </motion.div>
 
-        <div className="space-y-16">
+        <div className="space-y-14 sm:space-y-16">
           {categories.map((cat, ci) => (
             <motion.div
               key={cat.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: ci * 0.05 }}
+              transition={{ delay: ci * 0.05, duration: 0.5 }}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                   <cat.icon size={20} className="text-primary" />
                 </div>
-                <Link to={cat.href} className="text-xl font-extrabold text-foreground hover:text-primary transition-colors">
+                <Link to={cat.href} className="text-lg sm:text-xl font-extrabold text-foreground hover:text-primary transition-colors">
                   {cat.emoji} {cat.title}
                 </Link>
               </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-                {cat.services.map((s) => (
-                  <div key={s.name} className="glass-card-hover p-5 flex flex-col justify-between">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                {cat.services.map((s, si) => (
+                  <motion.div
+                    key={s.name}
+                    className="glass-card-hover p-5 flex flex-col justify-between"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: si * 0.06, duration: 0.4 }}
+                  >
                     <div>
                       <h3 className="font-bold text-foreground text-sm mb-1">{s.name}</h3>
                       <p className="mono-text text-xs text-primary font-bold mb-3">{s.price}</p>
@@ -116,7 +123,7 @@ const Services = () => (
                     >
                       {cat.emoji} Book Now
                     </a>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -124,10 +131,11 @@ const Services = () => (
         </div>
 
         <motion.div
-          className="text-center mt-16 glass-card p-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          className="text-center mt-16 glass-card p-6 sm:p-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
           <p className="text-lg font-bold text-foreground mb-3">Need a custom solution?</p>
           <Link to="/contact" className="btn-teal">Contact Us for a Personalized Quote</Link>

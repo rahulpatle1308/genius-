@@ -14,24 +14,24 @@ const Blog = () => (
   <Layout>
     <section className="section-padding">
       <div className="container-wide mx-auto">
-        <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+        <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
             <span className="teal-gradient-text">Tech Insights</span> & Resources
           </h1>
-          <p className="text-lg text-muted-foreground">Stay updated with latest in technology and security</p>
+          <p className="text-base sm:text-lg text-muted-foreground">Stay updated with latest in technology and security</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((p, i) => (
             <motion.article
               key={p.title}
-              className="glass-card-hover p-6 flex flex-col"
-              initial={{ opacity: 0, y: 20 }}
+              className="glass-card-hover p-5 sm:p-6 flex flex-col"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
             >
-              <div className="h-36 rounded-xl bg-secondary/50 mb-4 flex items-center justify-center">
+              <div className="h-28 sm:h-36 rounded-xl bg-secondary/50 mb-4 flex items-center justify-center">
                 <span className="text-3xl">📝</span>
               </div>
               <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium self-start mb-2">{p.category}</span>

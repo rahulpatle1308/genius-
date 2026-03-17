@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 
 const Footer = () => (
-  <footer className="border-t border-border bg-secondary/20">
-    <div className="container-wide mx-auto px-4 md:px-8 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+  <footer className="border-t border-border bg-secondary/30">
+    <div className="container-wide mx-auto px-4 md:px-8 py-12 sm:py-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
         {/* Brand */}
         <div>
           <Link to="/" className="inline-block mb-4">
             <span className="text-2xl font-extrabold tracking-tight text-foreground">
-              ENG<span className="text-primary">PROOF</span>
+              ENG<span className="teal-gradient-text">PROOF</span>
             </span>
             <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">
               Secure. Develop. Innovate.
@@ -91,7 +91,7 @@ const Footer = () => (
 
     {/* Bottom */}
     <div className="border-t border-border">
-      <div className="container-wide mx-auto px-4 md:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
+      <div className="container-wide mx-auto px-4 md:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
         <span>© 2025 ENGPROOF. All Rights Reserved.</span>
         <div className="flex gap-4">
           <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
