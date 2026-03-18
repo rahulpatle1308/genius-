@@ -1,16 +1,21 @@
 import Layout from "@/components/layout/Layout";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import serviceWeb from "@/assets/service-web.jpg";
+import serviceApp from "@/assets/service-app.jpg";
+import serviceCctv from "@/assets/service-cctv.jpg";
+import serviceId from "@/assets/service-id.jpg";
+import serviceEvent from "@/assets/service-event.jpg";
 
 const categories = ["All", "Websites", "Apps", "CCTV", "ID Cards", "Events"];
 
 const projects = [
-  { title: "TechStart E-commerce Platform", category: "Websites", client: "TechStart Solutions", desc: "Full e-commerce website with payment integration and inventory management.", impact: "200% increase in online sales" },
-  { title: "SecureHome Surveillance System", category: "CCTV", client: "SecureHome Properties", desc: "32-camera office security system with remote monitoring.", impact: "Zero security incidents in 6 months" },
-  { title: "EduFirst Smart ID System", category: "ID Cards", client: "EduFirst Academy", desc: "QR-based smart ID cards for 500+ students with attendance tracking.", impact: "90% faster attendance process" },
-  { title: "GreenMart Shopping App", category: "Apps", client: "GreenMart Organics", desc: "Cross-platform shopping app with delivery tracking.", impact: "5,000+ downloads in first month" },
-  { title: "InnoTech Annual Conference", category: "Events", client: "InnoTech Corp", desc: "Full event management for 300+ attendees with live streaming.", impact: "98% attendee satisfaction" },
-  { title: "LegalPro Corporate Website", category: "Websites", client: "LegalPro Associates", desc: "Multi-page corporate website with blog and client portal.", impact: "150% increase in lead generation" },
+  { title: "TechStart E-commerce Platform", category: "Websites", client: "TechStart Solutions", desc: "Full e-commerce website with payment integration and inventory management.", impact: "200% increase in online sales", image: serviceWeb },
+  { title: "SecureHome Surveillance System", category: "CCTV", client: "SecureHome Properties", desc: "32-camera office security system with remote monitoring.", impact: "Zero security incidents in 6 months", image: serviceCctv },
+  { title: "EduFirst Smart ID System", category: "ID Cards", client: "EduFirst Academy", desc: "QR-based smart ID cards for 500+ students with attendance tracking.", impact: "90% faster attendance process", image: serviceId },
+  { title: "GreenMart Shopping App", category: "Apps", client: "GreenMart Organics", desc: "Cross-platform shopping app with delivery tracking.", impact: "5,000+ downloads in first month", image: serviceApp },
+  { title: "InnoTech Annual Conference", category: "Events", client: "InnoTech Corp", desc: "Full event management for 300+ attendees with live streaming.", impact: "98% attendee satisfaction", image: serviceEvent },
+  { title: "LegalPro Corporate Website", category: "Websites", client: "LegalPro Associates", desc: "Multi-page corporate website with blog and client portal.", impact: "150% increase in lead generation", image: serviceWeb },
 ];
 
 const Portfolio = () => {
@@ -54,19 +59,26 @@ const Portfolio = () => {
               {filtered.map((p, i) => (
                 <motion.div
                   key={p.title}
-                  className="glass-card-hover p-6"
+                  className="glass-card-hover overflow-hidden"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08, duration: 0.4 }}
                 >
-                  <div className="h-32 sm:h-40 rounded-xl bg-secondary/50 mb-4 flex items-center justify-center">
-                    <span className="text-3xl">📂</span>
+                  <div className="h-40 sm:h-48 overflow-hidden">
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      loading="lazy"
+                    />
                   </div>
-                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">{p.category}</span>
-                  <h3 className="text-base font-bold text-foreground mt-2 mb-1">{p.title}</h3>
-                  <p className="text-xs text-muted-foreground mb-1">{p.client}</p>
-                  <p className="text-sm text-muted-foreground mb-3">{p.desc}</p>
-                  <div className="mono-text text-xs text-primary font-bold">{p.impact}</div>
+                  <div className="p-6">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">{p.category}</span>
+                    <h3 className="text-base font-bold text-foreground mt-2 mb-1">{p.title}</h3>
+                    <p className="text-xs text-muted-foreground mb-1">{p.client}</p>
+                    <p className="text-sm text-muted-foreground mb-3">{p.desc}</p>
+                    <div className="mono-text text-xs text-primary font-bold">{p.impact}</div>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>

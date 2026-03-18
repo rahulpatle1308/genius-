@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
+import { Menu, ChevronDown, MessageCircle, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const services = [
   { name: "Website Development", href: "/services/website-development", icon: "📘" },
@@ -21,8 +28,9 @@ const navLinks = [
 ];
 
 const Header = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -69,7 +77,6 @@ const Header = () => {
                   </Link>
                 )}
 
-                {/* Dropdown */}
                 {link.hasDropdown && (
                   <div
                     onMouseEnter={() => setServicesOpen(true)}
@@ -126,73 +133,115 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            className="lg:hidden p-2 text-foreground"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile - Sheet from left */}
+          <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+            <SheetTrigger asChild>
+              <button className="lg:hidden p-2 text-foreground">
+                <Menu size={24} />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[300px] sm:w-[340px] p-0 bg-background">
+              <SheetHeader className="p-6 pb-4 border-b border-border">
+                <SheetTitle className="text-left">
+                  <span className="text-xl font-extrabold tracking-tight text-foreground">
+                    ENG<span className="teal-gradient-text">PROOF</span>
+                  </span>
+                  <p className="text-[9px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">
+                    Secure. Develop. Innovate.
+                  </p>
+                </SheetTitle>
+              </SheetHeader>
+
+              <nav className="flex flex-col py-4">
+                {navLinks.map((link) =>
+                  link.hasDropdown ? (
+                    <div key={link.name}>
+                      <button
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        className={`w-full flex items-center justify-between px-6 py-3.5 text-sm font-medium transition-colors ${
+                          location.pathname.startsWith("/services")
+                            ? "text-primary bg-primary/5"
+                            : "text-foreground hover:bg-secondary"
+                        }`}
+                      >
+                        Services
+                        <ChevronDown
+                          size={16}
+                          className={`text-muted-foreground transition-transform duration-200 ${
+                            mobileServicesOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {mobileServicesOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden bg-secondary/30"
+                          >
+                            <Link
+                              to="/services"
+                              onClick={() => setSheetOpen(false)}
+                              className="flex items-center gap-3 px-8 py-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                            >
+                              <ChevronRight size={14} />
+                              All Services
+                            </Link>
+                            {services.map((s) => (
+                              <Link
+                                key={s.name}
+                                to={s.href}
+                                onClick={() => setSheetOpen(false)}
+                                className="flex items-center gap-3 px-8 py-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                              >
+                                <span className="text-base">{s.icon}</span>
+                                {s.name}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      key={link.name}
+                      to={link.href}
+                      onClick={() => setSheetOpen(false)}
+                      className={`px-6 py-3.5 text-sm font-medium transition-colors ${
+                        location.pathname === link.href
+                          ? "text-primary bg-primary/5 border-r-2 border-primary"
+                          : "text-foreground hover:bg-secondary"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  )
+                )}
+
+                <div className="border-t border-border mt-4 pt-4 px-6 space-y-3">
+                  <a
+                    href="https://wa.me/917489741225"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="whatsapp-btn text-xs w-full justify-center"
+                  >
+                    <MessageCircle size={16} /> Chat Now
+                  </a>
+                  <Link
+                    to="/contact"
+                    className="btn-teal text-xs w-full text-center block"
+                    onClick={() => setSheetOpen(false)}
+                  >
+                    Get a Quote
+                  </Link>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden overflow-hidden border-t border-border bg-background"
-          >
-            <div className="px-4 py-4 space-y-1">
-              {navLinks.map((link) =>
-                link.hasDropdown ? (
-                  <div key={link.name}>
-                    <Link
-                      to="/services"
-                      onClick={() => setMobileOpen(false)}
-                      className="block px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg"
-                    >
-                      Services
-                    </Link>
-                    <div className="pl-6 space-y-1">
-                      {services.map((s) => (
-                        <Link
-                          key={s.name}
-                          to={s.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground"
-                        >
-                          {s.icon} {s.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg"
-                  >
-                    {link.name}
-                  </Link>
-                )
-              )}
-              <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                <a href="https://wa.me/917489741225" target="_blank" rel="noopener noreferrer" className="whatsapp-btn text-xs flex-1 justify-center">
-                  <MessageCircle size={16} /> Chat Now
-                </a>
-                <Link to="/contact" className="btn-teal text-xs flex-1 text-center" onClick={() => setMobileOpen(false)}>
-                  Get a Quote
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   );
 };
