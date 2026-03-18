@@ -13,7 +13,21 @@ const serviceOptions = ["Website Development", "Mobile App Development", "CCTV &
 const budgetOptions = ["Under ₹25,000", "₹25,000 - ₹50,000", "₹50,000 - ₹1,00,000", "₹1,00,000+", "Not sure"];
 
 const Contact = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    service: "",
+    budget: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const msg = `Hi ENGPROOF,\n\nName: ${formData.name}\nCompany: ${formData.company || "N/A"}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nBudget: ${formData.budget || "N/A"}\n\nMessage:\n${formData.message}`;
+    window.open(`https://wa.me/917489741225?text=${encodeURIComponent(msg)}`, "_blank");
+  };
 
   return (
     <Layout>
@@ -59,40 +73,30 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              {submitted ? (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-8">
-                  <div className="w-16 h-16 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-4">
-                    <Send size={24} className="text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">Thank You!</h3>
-                  <p className="text-muted-foreground text-sm">We'll contact you within 24 hours.</p>
-                </motion.div>
-              ) : (
-                <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Full Name *" required className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" />
-                    <input type="text" placeholder="Company Name" className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" />
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input type="email" placeholder="Email Address *" required className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" />
-                    <input type="tel" placeholder="Phone Number *" required className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" />
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <select required defaultValue="" className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow">
-                      <option value="" disabled>Service Interest *</option>
-                      {serviceOptions.map((s) => <option key={s} value={s}>{s}</option>)}
-                    </select>
-                    <select defaultValue="" className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow">
-                      <option value="" disabled>Budget Range</option>
-                      {budgetOptions.map((b) => <option key={b} value={b}>{b}</option>)}
-                    </select>
-                  </div>
-                  <textarea placeholder="Your Message *" required rows={4} className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-shadow" />
-                  <button type="submit" className="btn-teal w-full flex items-center justify-center gap-2">
-                    <Send size={16} /> Send Message
-                  </button>
-                </form>
-              )}
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input type="text" placeholder="Full Name *" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" />
+                  <input type="text" placeholder="Company Name" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input type="email" placeholder="Email Address *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" />
+                  <input type="tel" placeholder="Phone Number *" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <select required value={formData.service} onChange={(e) => setFormData({ ...formData, service: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow">
+                    <option value="" disabled>Service Interest *</option>
+                    {serviceOptions.map((s) => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                  <select value={formData.budget} onChange={(e) => setFormData({ ...formData, budget: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow">
+                    <option value="" disabled>Budget Range</option>
+                    {budgetOptions.map((b) => <option key={b} value={b}>{b}</option>)}
+                  </select>
+                </div>
+                <textarea placeholder="Your Message *" required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-shadow" />
+                <button type="submit" className="whatsapp-btn w-full flex items-center justify-center gap-2 text-sm py-3">
+                  <MessageCircle size={18} /> Send via WhatsApp
+                </button>
+              </form>
             </motion.div>
 
             {/* Map */}

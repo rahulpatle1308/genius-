@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import WhatsAppWidget from "./WhatsAppWidget";
 import BackToTop from "./BackToTop";
+import HelpChatbot from "./HelpChatbot";
 
 const Layout = ({ children }: { children: ReactNode }) => (
   <div className="min-h-screen flex flex-col">
@@ -10,6 +11,7 @@ const Layout = ({ children }: { children: ReactNode }) => (
     <main className="flex-1">{children}</main>
     <Footer />
     <WhatsAppWidget />
+    <HelpChatbot />
     <BackToTop />
   </div>
 );

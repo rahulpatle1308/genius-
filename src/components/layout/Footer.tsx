@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="border-t border-border bg-secondary/30">
@@ -7,13 +8,16 @@ const Footer = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
         {/* Brand */}
         <div>
-          <Link to="/" className="inline-block mb-4">
-            <span className="text-2xl font-extrabold tracking-tight text-foreground">
-              ENG<span className="teal-gradient-text">PROOF</span>
-            </span>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">
-              Secure. Develop. Innovate.
-            </p>
+          <Link to="/" className="inline-flex items-center gap-2 mb-4">
+            <img src={logo} alt="ENGPROOF Logo" className="h-10 w-auto" />
+            <div>
+              <span className="text-xl font-extrabold tracking-tight text-foreground">
+                ENG<span className="teal-gradient-text">PROOF</span>
+              </span>
+              <p className="text-[8px] uppercase tracking-[0.15em] text-muted-foreground -mt-0.5">
+                Protect Solution
+              </p>
+            </div>
           </Link>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Enterprise technology and security solutions since 2025. Protecting and growing businesses across India.

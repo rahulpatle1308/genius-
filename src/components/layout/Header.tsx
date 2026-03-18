@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import logo from "@/assets/logo.png";
 
 const services = [
   { name: "Website Development", href: "/services/website-development", icon: "📘" },
@@ -38,13 +39,16 @@ const Header = () => {
       <div className="container-wide mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex flex-col">
-            <span className="text-xl md:text-2xl font-extrabold tracking-tight text-foreground">
-              ENG<span className="teal-gradient-text">PROOF</span>
-            </span>
-            <span className="text-[9px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">
-              Secure. Develop. Innovate.
-            </span>
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="ENGPROOF Logo" className="h-10 md:h-12 w-auto" />
+            <div className="flex flex-col">
+              <span className="text-lg md:text-xl font-extrabold tracking-tight text-foreground leading-none">
+                ENG<span className="teal-gradient-text">PROOF</span>
+              </span>
+              <span className="text-[8px] uppercase tracking-[0.15em] text-muted-foreground leading-none">
+                Protect Solution
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -143,12 +147,17 @@ const Header = () => {
             <SheetContent side="left" className="w-[300px] sm:w-[340px] p-0 bg-background">
               <SheetHeader className="p-6 pb-4 border-b border-border">
                 <SheetTitle className="text-left">
-                  <span className="text-xl font-extrabold tracking-tight text-foreground">
-                    ENG<span className="teal-gradient-text">PROOF</span>
-                  </span>
-                  <p className="text-[9px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">
-                    Secure. Develop. Innovate.
-                  </p>
+                  <div className="flex items-center gap-3">
+                    <img src={logo} alt="ENGPROOF Logo" className="h-10 w-auto" />
+                    <div>
+                      <span className="text-lg font-extrabold tracking-tight text-foreground block leading-none">
+                        ENG<span className="teal-gradient-text">PROOF</span>
+                      </span>
+                      <p className="text-[8px] uppercase tracking-[0.15em] text-muted-foreground leading-none mt-0.5">
+                        Protect Solution
+                      </p>
+                    </div>
+                  </div>
                 </SheetTitle>
               </SheetHeader>
 
