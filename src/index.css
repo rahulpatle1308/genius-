@@ -145,12 +145,12 @@
   }
 
   .whatsapp-btn {
-    @apply px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2 text-white;
-    background: hsl(142 70% 45%);
+    @apply px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2 text-primary-foreground;
+    background: linear-gradient(135deg, hsl(187,100%,38%), hsl(200,100%,36%));
   }
 
   .whatsapp-btn:hover {
-    box-shadow: 0 8px 20px hsl(142 70% 45% / 0.35);
+    box-shadow: 0 8px 20px hsl(187 100% 38% / 0.35);
     transform: translateY(-2px);
   }
 
