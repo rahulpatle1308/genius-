@@ -7,7 +7,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 14%;
+    --foreground: 220 25% 10%;
 
     --card: 210 20% 98%;
     --card-foreground: 220 20% 14%;
@@ -22,7 +22,7 @@
     --secondary-foreground: 220 20% 14%;
 
     --muted: 210 16% 93%;
-    --muted-foreground: 220 10% 46%;
+    --muted-foreground: 220 12% 40%;
 
     --accent: 187 80% 92%;
     --accent-foreground: 187 100% 28%;
@@ -145,12 +145,12 @@
   }
 
   .whatsapp-btn {
-    @apply px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2 text-white;
-    background: hsl(142 70% 45%);
+    @apply px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2 text-primary-foreground;
+    background: linear-gradient(135deg, hsl(187,100%,38%), hsl(200,100%,36%));
   }
 
   .whatsapp-btn:hover {
-    box-shadow: 0 8px 20px hsl(142 70% 45% / 0.35);
+    box-shadow: 0 8px 20px hsl(187 100% 38% / 0.35);
     transform: translateY(-2px);
   }
 
