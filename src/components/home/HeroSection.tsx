@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
@@ -24,7 +24,6 @@ const itemVariants = {
 
 const HeroSection = () => (
   <section className="relative overflow-hidden">
-    {/* Background Image */}
     <div className="absolute inset-0 z-0">
       <img src={heroBg} alt="Technology workspace" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
@@ -41,7 +40,7 @@ const HeroSection = () => (
             <motion.div variants={itemVariants}>
               <div className="badge-primary mb-6">⭐ Trusted by Businesses Across India</div>
             </motion.div>
-            <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6">
+            <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-foreground">
               Enterprise-Grade{" "}
               <span className="teal-gradient-text">Technology</span> &{" "}
               <span className="teal-gradient-text">Security</span> Solutions
@@ -50,12 +49,12 @@ const HeroSection = () => (
               Complete digital and physical security under one roof. From website development to CCTV installation, we protect and grow your business.
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-10">
-              <Link to="/services" className="btn-teal inline-flex items-center justify-center gap-2">
-                Explore Services <ArrowRight size={16} />
+              <Link to="/services" className="btn-teal inline-flex items-center justify-center gap-2 text-base py-3.5 px-7">
+                Explore Services <ArrowRight size={18} />
               </Link>
-              <Link to="/contact" className="btn-outline-light text-center">
-                Schedule Consultation
-              </Link>
+              <a href="tel:+917489741225" className="btn-outline-light text-center inline-flex items-center justify-center gap-2 text-base py-3.5 px-7">
+                <Phone size={18} /> Call Now
+              </a>
             </motion.div>
             <motion.div variants={itemVariants} className="flex gap-8">
               {stats.map((s, i) => (
