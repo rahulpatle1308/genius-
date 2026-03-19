@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, ChevronDown, MessageCircle, ChevronRight } from "lucide-react";
+import { Menu, ChevronDown, MessageCircle, ChevronRight, Home, Info, Briefcase, FolderOpen, PenSquare, Phone as PhoneIcon, X, Monitor, Smartphone, Camera, CreditCard, Mic } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Sheet,
@@ -12,21 +12,30 @@ import {
 import logo from "@/assets/logo.png";
 
 const services = [
-  { name: "Website Development", href: "/services/website-development", icon: "📘" },
-  { name: "Mobile App Development", href: "/services/mobile-app-development", icon: "📱" },
-  { name: "CCTV & Security", href: "/services/cctv-security", icon: "🔒" },
-  { name: "Digital ID Cards", href: "/services/digital-id-cards", icon: "🆔" },
-  { name: "Event Management", href: "/services/event-management", icon: "🎤" },
+  { name: "Website Development", href: "/services/website-development", icon: "📘", lucideIcon: Monitor },
+  { name: "Mobile App Development", href: "/services/mobile-app-development", icon: "📱", lucideIcon: Smartphone },
+  { name: "CCTV & Security", href: "/services/cctv-security", icon: "🔒", lucideIcon: Camera },
+  { name: "Digital ID Cards", href: "/services/digital-id-cards", icon: "🆔", lucideIcon: CreditCard },
+  { name: "Event Management", href: "/services/event-management", icon: "🎤", lucideIcon: Mic },
 ];
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services", hasDropdown: true },
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
+  { name: "Home", href: "/", icon: Home },
+  { name: "About", href: "/about", icon: Info },
+  { name: "Services", href: "/services", hasDropdown: true, icon: Briefcase },
+  { name: "Portfolio", href: "/portfolio", icon: FolderOpen },
+  { name: "Blog", href: "/blog", icon: PenSquare },
+  { name: "Contact", href: "/contact", icon: PhoneIcon },
 ];
+
+const menuItemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.05, duration: 0.3, ease: "easeOut" },
+  }),
+};
 
 const Header = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -124,6 +133,13 @@ const Header = () => {
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
             <a
+              href="tel:+917489741225"
+              className="btn-outline-light text-xs inline-flex items-center gap-2"
+            >
+              <PhoneIcon size={14} />
+              Call Now
+            </a>
+            <a
               href="https://wa.me/917489741225"
               target="_blank"
               rel="noopener noreferrer"
@@ -140,12 +156,15 @@ const Header = () => {
           {/* Mobile - Sheet from left */}
           <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
             <SheetTrigger asChild>
-              <button className="lg:hidden p-2 text-foreground">
-                <Menu size={24} />
-              </button>
+              <motion.button
+                className="lg:hidden p-2.5 rounded-xl bg-secondary text-foreground"
+                whileTap={{ scale: 0.9 }}
+              >
+                <Menu size={22} />
+              </motion.button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[340px] p-0 bg-background">
-              <SheetHeader className="p-6 pb-4 border-b border-border">
+            <SheetContent side="left" className="w-[300px] sm:w-[340px] p-0 bg-background border-r border-border">
+              <SheetHeader className="p-5 pb-4 border-b border-border">
                 <SheetTitle className="text-left">
                   <div className="flex items-center gap-3">
                     <img src={logo} alt="ENGPROOF Logo" className="h-10 w-auto" />
@@ -161,25 +180,44 @@ const Header = () => {
                 </SheetTitle>
               </SheetHeader>
 
-              <nav className="flex flex-col py-4">
-                {navLinks.map((link) =>
+              <nav className="flex flex-col py-3">
+                {navLinks.map((link, index) =>
                   link.hasDropdown ? (
-                    <div key={link.name}>
+                    <motion.div
+                      key={link.name}
+                      custom={index}
+                      variants={menuItemVariants}
+                      initial="hidden"
+                      animate="visible"
+                    >
                       <button
                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                        className={`w-full flex items-center justify-between px-6 py-3.5 text-sm font-medium transition-colors ${
+                        className={`w-full flex items-center gap-3 justify-between px-5 py-3.5 text-sm font-medium transition-all ${
                           location.pathname.startsWith("/services")
                             ? "text-primary bg-primary/5"
                             : "text-foreground hover:bg-secondary"
                         }`}
                       >
-                        Services
-                        <ChevronDown
-                          size={16}
-                          className={`text-muted-foreground transition-transform duration-200 ${
-                            mobileServicesOpen ? "rotate-180" : ""
-                          }`}
-                        />
+                        <div className="flex items-center gap-3">
+                          <motion.div
+                            className={`w-9 h-9 rounded-xl flex items-center justify-center ${
+                              location.pathname.startsWith("/services")
+                                ? "bg-primary/10 text-primary"
+                                : "bg-secondary text-muted-foreground"
+                            }`}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <link.icon size={18} />
+                          </motion.div>
+                          Services
+                        </div>
+                        <motion.div
+                          animate={{ rotate: mobileServicesOpen ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <ChevronDown size={16} className="text-muted-foreground" />
+                        </motion.div>
                       </button>
                       <AnimatePresence>
                         {mobileServicesOpen && (
@@ -187,56 +225,86 @@ const Header = () => {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="overflow-hidden bg-secondary/30"
+                            transition={{ duration: 0.25 }}
+                            className="overflow-hidden bg-secondary/20"
                           >
                             <Link
                               to="/services"
                               onClick={() => setSheetOpen(false)}
-                              className="flex items-center gap-3 px-8 py-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                              className="flex items-center gap-3 px-5 pl-[68px] py-3 text-sm text-muted-foreground hover:text-primary transition-colors"
                             >
                               <ChevronRight size={14} />
                               All Services
                             </Link>
-                            {services.map((s) => (
-                              <Link
+                            {services.map((s, si) => (
+                              <motion.div
                                 key={s.name}
-                                to={s.href}
-                                onClick={() => setSheetOpen(false)}
-                                className="flex items-center gap-3 px-8 py-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: si * 0.04 }}
                               >
-                                <span className="text-base">{s.icon}</span>
-                                {s.name}
-                              </Link>
+                                <Link
+                                  to={s.href}
+                                  onClick={() => setSheetOpen(false)}
+                                  className="flex items-center gap-3 px-5 pl-[68px] py-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                  <s.lucideIcon size={16} className="text-primary/60" />
+                                  {s.name}
+                                </Link>
+                              </motion.div>
                             ))}
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </div>
+                    </motion.div>
                   ) : (
-                    <Link
+                    <motion.div
                       key={link.name}
-                      to={link.href}
-                      onClick={() => setSheetOpen(false)}
-                      className={`px-6 py-3.5 text-sm font-medium transition-colors ${
-                        location.pathname === link.href
-                          ? "text-primary bg-primary/5 border-r-2 border-primary"
-                          : "text-foreground hover:bg-secondary"
-                      }`}
+                      custom={index}
+                      variants={menuItemVariants}
+                      initial="hidden"
+                      animate="visible"
                     >
-                      {link.name}
-                    </Link>
+                      <Link
+                        to={link.href}
+                        onClick={() => setSheetOpen(false)}
+                        className={`flex items-center gap-3 px-5 py-3.5 text-sm font-medium transition-all ${
+                          location.pathname === link.href
+                            ? "text-primary bg-primary/5"
+                            : "text-foreground hover:bg-secondary"
+                        }`}
+                      >
+                        <motion.div
+                          className={`w-9 h-9 rounded-xl flex items-center justify-center ${
+                            location.pathname === link.href
+                              ? "bg-primary/10 text-primary"
+                              : "bg-secondary text-muted-foreground"
+                          }`}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <link.icon size={18} />
+                        </motion.div>
+                        {link.name}
+                      </Link>
+                    </motion.div>
                   )
                 )}
 
-                <div className="border-t border-border mt-4 pt-4 px-6 space-y-3">
+                <div className="border-t border-border mt-4 pt-4 px-5 space-y-2.5">
+                  <a
+                    href="tel:+917489741225"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold border border-primary/20 text-primary bg-primary/5 transition-all hover:bg-primary/10"
+                  >
+                    <PhoneIcon size={16} /> Call Now
+                  </a>
                   <a
                     href="https://wa.me/917489741225"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="whatsapp-btn text-xs w-full justify-center"
                   >
-                    <MessageCircle size={16} /> Chat Now
+                    <MessageCircle size={16} /> WhatsApp
                   </a>
                   <Link
                     to="/contact"
