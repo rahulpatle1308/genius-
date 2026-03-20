@@ -16,7 +16,7 @@ const websiteServices = [
     features: ["Admin dashboard", "Content management", "User login", "Blog system", "Database integration"],
     tech: "PHP/MySQL, Node.js, Python Django",
     timeline: "15-20 days",
-    price: "Starting ₹35,000",
+    price: "Starting ₹1,00,000",
   },
   {
     name: "E-commerce Website",
