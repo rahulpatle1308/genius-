@@ -11,7 +11,7 @@ const categories = [
     href: "/services/website-development",
     services: [
       { name: "Static Website", price: "Starting ₹15,000", features: ["5 pages", "SEO ready", "Mobile responsive"] },
-      { name: "Dynamic Website", price: "Starting ₹35,000", features: ["Admin panel", "CMS", "Database"] },
+      { name: "Dynamic Website", price: "Starting ₹1,00,000", features: ["Admin panel", "CMS", "Database"] },
       { name: "E-commerce Website", price: "Starting ₹60,000", features: ["Payment gateway", "Product management"] },
       { name: "Corporate Website", price: "Custom Quote", features: ["Enterprise grade", "Scalable"] },
       { name: "Custom Web App", price: "Custom Quote", features: ["CRM", "Automation", "APIs"] },
