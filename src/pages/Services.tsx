@@ -23,8 +23,8 @@ const categories = [
     title: "Mobile App Development",
     href: "/services/mobile-app-development",
     services: [
-      { name: "Android App", price: "Starting ₹50,000", features: ["Native Kotlin/Java", "Play Store"] },
-      { name: "iOS App", price: "Starting ₹60,000", features: ["Native Swift", "App Store"] },
+      { name: "Android App", price: "Starting ₹1,50,000", features: ["Native Kotlin/Java", "Play Store"] },
+      { name: "iOS App", price: "Starting ₹1,80,000", features: ["Native Swift", "App Store"] },
       { name: "Business App", price: "Custom Quote", features: ["Service booking", "Management"] },
       { name: "E-commerce App", price: "Custom Quote", features: ["Shopping", "Payments"] },
     ],
