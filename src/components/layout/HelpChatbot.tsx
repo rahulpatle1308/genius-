@@ -29,7 +29,7 @@ const faqData: ChatOption[] = [
     label: "🕐 Business Hours",
     value: "hours",
     action: "answer",
-    answer: "We're available:\n\n📅 Mon-Sat: 8:00 AM – 8:00 PM\n🚨 Emergency Support: 24/7\n📍 Location: Indore, MP, India\n📞 Call: +91 74897 41225",
+    answer: "We're available:\n\n📅 Mon-Sat: 8:00 AM – 8:00 PM\n🚨 Emergency Support: 24/7\n📍 Location: Bhopal, MP, India\n📞 Call: +91 74897 41225",
   },
   {
     label: "🛠️ Our Services",
@@ -60,7 +60,7 @@ const HelpChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "👋 Hi! Welcome to ENGPROOF. How can I help you today?",
+      text: "👋 Hi ENGPROOF! Welcome. How can I help you today?",
       sender: "bot",
       options: faqData,
     },
@@ -83,7 +83,7 @@ const HelpChatbot = () => {
 
     if (option.action === "whatsapp") {
       const msg = option.whatsappMsg || "Hi ENGPROOF, I need help.";
-      addMessage("Opening WhatsApp for you... 💬", "bot");
+      addMessage("Opening WhatsApp for you... 💬\n\nThank you for choosing ENGPROOF! 🙏", "bot");
       setTimeout(() => {
         window.open(`https://wa.me/917489741225?text=${encodeURIComponent(msg)}`, "_blank");
       }, 500);
@@ -153,7 +153,7 @@ const HelpChatbot = () => {
     if (!matched) {
       setTimeout(() => {
         addMessage(
-          "I'm not sure about that. Let me connect you with our team who can help better! 🙂",
+          "I'm not sure about that. Let me connect you with our team who can help better! 🙂\n\nThank you for reaching out! 🙏",
           "bot",
           [
             { label: "📞 Chat with Team on WhatsApp", value: "wa-help", action: "whatsapp", whatsappMsg: `Hi ENGPROOF, I need help with: ${text}` },
@@ -171,7 +171,7 @@ const HelpChatbot = () => {
         {!isOpen && (
           <motion.button
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-20 right-5 sm:bottom-24 sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center shadow-lg text-primary-foreground"
+            className="fixed bottom-[76px] right-5 sm:bottom-[88px] sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center shadow-lg text-primary-foreground"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
@@ -188,7 +188,7 @@ const HelpChatbot = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-20 right-3 sm:bottom-24 sm:right-6 z-50 w-[340px] sm:w-[380px] max-h-[500px] rounded-2xl shadow-2xl border border-border bg-background flex flex-col overflow-hidden"
+            className="fixed bottom-[76px] right-3 sm:bottom-[88px] sm:right-6 z-50 w-[340px] sm:w-[380px] max-h-[500px] rounded-2xl shadow-2xl border border-border bg-background flex flex-col overflow-hidden"
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, ChevronDown, MessageCircle, ChevronRight, Home, Info, Briefcase, FolderOpen, PenSquare, Phone as PhoneIcon, X, Monitor, Smartphone, Camera, CreditCard, Mic } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Sheet,
@@ -132,6 +133,7 @@ const Header = () => {
 
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <a
               href="tel:+917489741225"
               className="btn-outline-light text-xs inline-flex items-center gap-2"
@@ -154,15 +156,17 @@ const Header = () => {
           </div>
 
           {/* Mobile - Sheet from left */}
-          <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
-            <SheetTrigger asChild>
-              <motion.button
-                className="lg:hidden p-2.5 rounded-xl bg-secondary text-foreground"
-                whileTap={{ scale: 0.9 }}
-              >
-                <Menu size={22} />
-              </motion.button>
-            </SheetTrigger>
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+              <SheetTrigger asChild>
+                <motion.button
+                  className="p-2.5 rounded-xl bg-secondary text-foreground"
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Menu size={22} />
+                </motion.button>
+              </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[340px] p-0 bg-background border-r border-border">
               <SheetHeader className="p-5 pb-4 border-b border-border">
                 <SheetTitle className="text-left">
@@ -317,6 +321,7 @@ const Header = () => {
               </nav>
             </SheetContent>
           </Sheet>
+          </div>
         </div>
       </div>
     </header>
