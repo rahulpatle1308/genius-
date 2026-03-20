@@ -15,7 +15,7 @@ const sections = [
   { title: "11. Children's Privacy", content: "Our services are not directed at individuals under 18 years of age. We do not knowingly collect personal information from minors." },
   { title: "12. International Data Transfers", content: "Where data is transferred outside India, we ensure appropriate safeguards are in place, including standard contractual clauses in compliance with applicable data protection laws." },
   { title: "13. Updates to This Privacy Policy", content: "ENGPROOF reserves the right to update this Privacy Policy. The revised version will be posted on this page with an updated effective date." },
-  { title: "14. Contact Information", content: "For privacy-related inquiries, data protection requests, or concerns:\nENGPROOF, Indore, Madhya Pradesh, India\n+91 74897 41225\nengproof25@gmail.com\nBusiness Hours: Mon-Sat 8:00 AM – 8:00 PM (Emergency support 24/7 for existing clients)" },
+  { title: "14. Contact Information", content: "For privacy-related inquiries, data protection requests, or concerns:\nENGPROOF, Bhopal, Madhya Pradesh, India\n+91 74897 41225\nengproof25@gmail.com\nBusiness Hours: Mon-Sat 8:00 AM – 8:00 PM (Emergency support 24/7 for existing clients)" },
 ];
 
 const PrivacyPolicy = () => (
