@@ -133,6 +133,7 @@ const Header = () => {
 
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <a
               href="tel:+917489741225"
               className="btn-outline-light text-xs inline-flex items-center gap-2"
