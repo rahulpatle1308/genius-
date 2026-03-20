@@ -171,7 +171,7 @@ const HelpChatbot = () => {
         {!isOpen && (
           <motion.button
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-20 right-5 sm:bottom-24 sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center shadow-lg text-primary-foreground"
+            className="fixed bottom-[76px] right-5 sm:bottom-[88px] sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center shadow-lg text-primary-foreground"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
