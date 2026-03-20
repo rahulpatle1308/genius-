@@ -188,7 +188,7 @@ const HelpChatbot = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-20 right-3 sm:bottom-24 sm:right-6 z-50 w-[340px] sm:w-[380px] max-h-[500px] rounded-2xl shadow-2xl border border-border bg-background flex flex-col overflow-hidden"
+            className="fixed bottom-[76px] right-3 sm:bottom-[88px] sm:right-6 z-50 w-[340px] sm:w-[380px] max-h-[500px] rounded-2xl shadow-2xl border border-border bg-background flex flex-col overflow-hidden"
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
