@@ -29,7 +29,7 @@ const faqData: ChatOption[] = [
     label: "🕐 Business Hours",
     value: "hours",
     action: "answer",
-    answer: "We're available:\n\n📅 Mon-Sat: 8:00 AM – 8:00 PM\n🚨 Emergency Support: 24/7\n📍 Location: Indore, MP, India\n📞 Call: +91 74897 41225",
+    answer: "We're available:\n\n📅 Mon-Sat: 8:00 AM – 8:00 PM\n🚨 Emergency Support: 24/7\n📍 Location: Bhopal, MP, India\n📞 Call: +91 74897 41225",
   },
   {
     label: "🛠️ Our Services",
