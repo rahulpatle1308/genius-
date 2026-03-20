@@ -322,6 +322,7 @@ const Header = () => {
             </SheetContent>
           </Sheet>
           </div>
+        </div>
       </div>
     </header>
   );
