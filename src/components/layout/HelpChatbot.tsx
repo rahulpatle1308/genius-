@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Send, X, Bot, User } from "lucide-react";
 import logo from "@/assets/logo.png";
@@ -18,12 +18,23 @@ interface ChatOption {
   whatsappMsg?: string;
 }
 
+const speak = (text: string) => {
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = "hi-IN";
+    utter.rate = 0.95;
+    utter.pitch = 1.1;
+    window.speechSynthesis.speak(utter);
+  }
+};
+
 const faqData: ChatOption[] = [
   {
     label: "💰 Pricing Info",
     value: "pricing",
     action: "answer",
-    answer: "Our pricing:\n\n📘 Website: Starting ₹15,000\n📱 Mobile App: Starting ₹50,000\n🔒 CCTV: Starting ₹8,000\n🆔 ID Cards: Starting ₹30/card\n🎤 Events: Custom Quote\n\nWant a detailed quote? I can connect you with our team on WhatsApp!",
+    answer: "Our pricing:\n\n📘 Static Website: Starting ₹15,000\n📘 Dynamic Website: Starting ₹1,00,000\n📘 E-commerce: Starting ₹1,50,000\n📱 Mobile App: Starting ₹1,50,000\n🔒 CCTV: Starting ₹8,000\n🆔 ID Cards: Starting ₹50/card\n🎤 Events: Custom Quote\n\nWant a detailed quote? I can connect you with our team on WhatsApp!",
   },
   {
     label: "🕐 Business Hours",
@@ -47,10 +58,10 @@ const faqData: ChatOption[] = [
 
 const serviceDetails: Record<string, ChatOption[]> = {
   services: [
-    { label: "📘 Website Development", value: "web-detail", action: "answer", answer: "Website Development Services:\n\n• Static Website – ₹15,000+\n• Dynamic Website – ₹35,000+\n• E-commerce – ₹60,000+\n• Corporate – Custom Quote\n• Custom Web App – Custom Quote\n\n⏱️ Timeline: 5-60 days\n🔧 Tech: React, PHP, Node.js" },
-    { label: "📱 Mobile App", value: "app-detail", action: "answer", answer: "Mobile App Development:\n\n• Android App – ₹50,000+\n• iOS App – ₹60,000+\n• Business App – Custom Quote\n• E-commerce App – Custom Quote\n\n⏱️ Timeline: 30-90 days\n🔧 Tech: Kotlin, Swift, Flutter" },
+    { label: "📘 Website Development", value: "web-detail", action: "answer", answer: "Website Development Services:\n\n• Static Website – ₹15,000+\n• Dynamic Website – ₹1,00,000+\n• E-commerce – ₹1,50,000+\n• Corporate – Custom Quote\n• Custom Web App – Custom Quote\n\n⏱️ Timeline: 5-60 days\n🔧 Tech: React, PHP, Node.js" },
+    { label: "📱 Mobile App", value: "app-detail", action: "answer", answer: "Mobile App Development:\n\n• Android App – ₹1,50,000+\n• iOS App – ₹1,80,000+\n• Business App – Custom Quote\n• E-commerce App – Custom Quote\n\n⏱️ Timeline: 30-90 days\n🔧 Tech: Kotlin, Swift, Flutter" },
     { label: "🔒 CCTV Security", value: "cctv-detail", action: "answer", answer: "CCTV & Security Systems:\n\n• Home CCTV – ₹8,000+\n• Office Security – ₹15,000+\n• Wireless CCTV – ₹12,000+\n• Maintenance – ₹2,000/mo\n\n✅ Installation included\n📱 Remote mobile access" },
-    { label: "🆔 ID Cards", value: "id-detail", action: "answer", answer: "Digital ID Card Services:\n\n• Corporate ID – ₹50/card+\n• School ID – ₹30/card+\n• Smart QR ID – ₹80/card+\n• PVC Printed – ₹100/card+\n\n⏱️ Turnaround: 2-3 days\n📦 Bulk discounts available" },
+    { label: "🆔 ID Cards", value: "id-detail", action: "answer", answer: "Digital ID Card Services:\n\n• Corporate ID – ₹50/card+\n• School ID – ₹50/card+\n• Smart QR ID – ₹80/card+\n• PVC Printed – ₹100/card+\n\n⏱️ Turnaround: 2-3 days\n📦 Bulk discounts available" },
     { label: "🎤 Event Management", value: "event-detail", action: "answer", answer: "Event Management:\n\n• Corporate Events – Custom\n• Registration Systems – ₹15,000+\n• Technical Support – ₹10,000+\n\n✅ Sound, Lighting, LED, Streaming\n📋 QR check-in & certificates" },
   ],
 };
@@ -60,7 +71,7 @@ const HelpChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "👋 Hi ENGPROOF! Welcome. How can I help you today?",
+      text: "🙏 नमस्ते! Welcome to ENGPROOF. How can I help you today?",
       sender: "bot",
       options: faqData,
     },
@@ -72,6 +83,18 @@ const HelpChatbot = () => {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  // Speak "Namaste" when chatbot opens
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => speak("नमस्ते! ENGPROOF में आपका स्वागत है"), 300);
+    }
+  }, [isOpen]);
+
+  const handleClose = useCallback(() => {
+    speak("Thank you! ENGPROOF को चुनने के लिए धन्यवाद");
+    setTimeout(() => setIsOpen(false), 200);
+  }, []);
 
   const addMessage = (text: string, sender: "bot" | "user", options?: ChatOption[]) => {
     const id = idRef.current++;
@@ -120,7 +143,6 @@ const HelpChatbot = () => {
     setInputText("");
     addMessage(text, "user");
 
-    // Simple keyword matching
     const lower = text.toLowerCase();
     let matched = false;
 
@@ -166,7 +188,6 @@ const HelpChatbot = () => {
 
   return (
     <>
-      {/* Chat Toggle Button */}
       <AnimatePresence>
         {!isOpen && (
           <motion.button
@@ -184,7 +205,6 @@ const HelpChatbot = () => {
         )}
       </AnimatePresence>
 
-      {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -194,7 +214,6 @@ const HelpChatbot = () => {
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.25 }}
           >
-            {/* Header */}
             <div className="teal-gradient px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <img src={logo} alt="ENGPROOF" className="h-8 w-8 rounded-full bg-white/20 p-0.5" />
@@ -203,12 +222,11 @@ const HelpChatbot = () => {
                   <p className="text-white/70 text-[10px]">Usually replies instantly</p>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white">
+              <button onClick={handleClose} className="text-white/80 hover:text-white">
                 <X size={20} />
               </button>
             </div>
 
-            {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-[250px] max-h-[340px]">
               {messages.map((msg) => (
                 <div key={msg.id} className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
@@ -227,7 +245,6 @@ const HelpChatbot = () => {
                         {msg.text}
                       </div>
                     </div>
-                    {/* Options */}
                     {msg.options && msg.sender === "bot" && (
                       <div className="flex flex-wrap gap-1.5 mt-2 ml-8">
                         {msg.options.map((opt) => (
@@ -247,7 +264,6 @@ const HelpChatbot = () => {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Input */}
             <div className="border-t border-border p-3">
               <form
                 onSubmit={(e) => { e.preventDefault(); handleSend(); }}

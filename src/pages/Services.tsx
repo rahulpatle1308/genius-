@@ -11,8 +11,8 @@ const categories = [
     href: "/services/website-development",
     services: [
       { name: "Static Website", price: "Starting ₹15,000", features: ["5 pages", "SEO ready", "Mobile responsive"] },
-      { name: "Dynamic Website", price: "Starting ₹35,000", features: ["Admin panel", "CMS", "Database"] },
-      { name: "E-commerce Website", price: "Starting ₹60,000", features: ["Payment gateway", "Product management"] },
+      { name: "Dynamic Website", price: "Starting ₹1,00,000", features: ["Admin panel", "CMS", "Database"] },
+      { name: "E-commerce Website", price: "Starting ₹1,50,000", features: ["Payment gateway", "Product management"] },
       { name: "Corporate Website", price: "Custom Quote", features: ["Enterprise grade", "Scalable"] },
       { name: "Custom Web App", price: "Custom Quote", features: ["CRM", "Automation", "APIs"] },
     ],
@@ -23,8 +23,8 @@ const categories = [
     title: "Mobile App Development",
     href: "/services/mobile-app-development",
     services: [
-      { name: "Android App", price: "Starting ₹50,000", features: ["Native Kotlin/Java", "Play Store"] },
-      { name: "iOS App", price: "Starting ₹60,000", features: ["Native Swift", "App Store"] },
+      { name: "Android App", price: "Starting ₹1,50,000", features: ["Native Kotlin/Java", "Play Store"] },
+      { name: "iOS App", price: "Starting ₹1,80,000", features: ["Native Swift", "App Store"] },
       { name: "Business App", price: "Custom Quote", features: ["Service booking", "Management"] },
       { name: "E-commerce App", price: "Custom Quote", features: ["Shopping", "Payments"] },
     ],
@@ -48,7 +48,7 @@ const categories = [
     href: "/services/digital-id-cards",
     services: [
       { name: "Corporate ID", price: "Starting ₹50/card", features: ["Professional design", "Company logo"] },
-      { name: "School ID", price: "Starting ₹30/card", features: ["Student/staff", "Library card"] },
+      { name: "School ID", price: "Starting ₹50/card", features: ["Student/staff", "Library card"] },
       { name: "Smart QR ID", price: "Starting ₹80/card", features: ["QR code", "Digital verification"] },
       { name: "PVC Printed ID", price: "Starting ₹100/card", features: ["High-quality PVC", "Full color"] },
     ],
