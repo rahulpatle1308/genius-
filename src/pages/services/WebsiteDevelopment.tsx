@@ -24,7 +24,7 @@ const websiteServices = [
     features: ["Product catalog", "Shopping cart", "Payment gateway", "Order tracking", "Customer accounts"],
     tech: "WooCommerce, Shopify, Custom PHP",
     timeline: "20-30 days",
-    price: "Starting ₹60,000",
+    price: "Starting ₹1,50,000",
   },
   {
     name: "Corporate Website",

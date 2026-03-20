@@ -3,7 +3,7 @@ import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 
 const services = [
   { name: "Corporate ID Cards", desc: "Professional identification for employees.", features: ["Professional design", "Employee details", "Company logo", "Durable material"], timeline: "2-3 days", price: "Starting ₹50/card" },
-  { name: "School ID Cards", desc: "Student and staff identification systems.", features: ["Student/staff IDs", "Batch printing", "Library card option", "Security features"], timeline: "2-3 days", price: "Starting ₹30/card" },
+  { name: "School ID Cards", desc: "Student and staff identification systems.", features: ["Student/staff IDs", "Batch printing", "Library card option", "Security features"], timeline: "2-3 days", price: "Starting ₹50/card" },
   { name: "Smart QR ID Cards", desc: "Digital verification with QR code integration.", features: ["QR code integration", "Digital verification", "Scanner compatible", "Secure encoding"], timeline: "3-4 days", price: "Starting ₹80/card" },
   { name: "PVC Printed ID Cards", desc: "Premium quality PVC identification cards.", features: ["High-quality PVC", "Full color printing", "Magnetic stripe option", "RFID available"], timeline: "3-5 days", price: "Starting ₹100/card" },
 ];

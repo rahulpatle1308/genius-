@@ -2,8 +2,8 @@ import Layout from "@/components/layout/Layout";
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 
 const services = [
-  { name: "Android App Development", desc: "Native Android apps built with Kotlin/Java for the Play Store.", features: ["Native performance", "Play Store deployment", "Push notifications", "Offline support"], tech: "Kotlin, Java, Android Studio", timeline: "30-45 days", price: "Starting ₹50,000" },
-  { name: "iOS App Development", desc: "Native iOS apps built with Swift for the App Store.", features: ["Native UI/UX", "App Store deployment", "Apple Pay integration", "iCloud sync"], tech: "Swift, Xcode", timeline: "30-45 days", price: "Starting ₹60,000" },
+  { name: "Android App Development", desc: "Native Android apps built with Kotlin/Java for the Play Store.", features: ["Native performance", "Play Store deployment", "Push notifications", "Offline support"], tech: "Kotlin, Java, Android Studio", timeline: "30-45 days", price: "Starting ₹1,50,000" },
+  { name: "iOS App Development", desc: "Native iOS apps built with Swift for the App Store.", features: ["Native UI/UX", "App Store deployment", "Apple Pay integration", "iCloud sync"], tech: "Swift, Xcode", timeline: "30-45 days", price: "Starting ₹1,80,000" },
   { name: "Business App", desc: "Custom business apps for service booking and management.", features: ["Service booking", "User management", "Analytics dashboard", "Role-based access"], tech: "React Native, Flutter, Firebase", timeline: "40-60 days", price: "Custom Quote" },
   { name: "E-commerce App", desc: "Full-featured shopping apps with payment integration.", features: ["Product catalog", "Cart & checkout", "Payment gateway", "Order tracking"], tech: "React Native, Flutter, Stripe", timeline: "45-60 days", price: "Custom Quote" },
 ];

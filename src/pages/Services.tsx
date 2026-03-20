@@ -48,7 +48,7 @@ const categories = [
     href: "/services/digital-id-cards",
     services: [
       { name: "Corporate ID", price: "Starting ₹50/card", features: ["Professional design", "Company logo"] },
-      { name: "School ID", price: "Starting ₹30/card", features: ["Student/staff", "Library card"] },
+      { name: "School ID", price: "Starting ₹50/card", features: ["Student/staff", "Library card"] },
       { name: "Smart QR ID", price: "Starting ₹80/card", features: ["QR code", "Digital verification"] },
       { name: "PVC Printed ID", price: "Starting ₹100/card", features: ["High-quality PVC", "Full color"] },
     ],
