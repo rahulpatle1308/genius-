@@ -153,7 +153,7 @@ const HelpChatbot = () => {
     if (!matched) {
       setTimeout(() => {
         addMessage(
-          "I'm not sure about that. Let me connect you with our team who can help better! 🙂",
+          "I'm not sure about that. Let me connect you with our team who can help better! 🙂\n\nThank you for reaching out! 🙏",
           "bot",
           [
             { label: "📞 Chat with Team on WhatsApp", value: "wa-help", action: "whatsapp", whatsappMsg: `Hi ENGPROOF, I need help with: ${text}` },
