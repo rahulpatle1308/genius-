@@ -60,7 +60,7 @@ const HelpChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "👋 Hi! Welcome to ENGPROOF. How can I help you today?",
+      text: "👋 Hi ENGPROOF! Welcome. How can I help you today?",
       sender: "bot",
       options: faqData,
     },

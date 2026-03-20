@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 const FloatingWidgets = () => (
   <>
-    {/* Call Button */}
+    {/* Call Button - above chatbot */}
     <motion.a
       href="tel:+917489741225"
-      className="fixed bottom-20 right-5 sm:bottom-[88px] sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 bg-primary text-primary-foreground"
+      className="fixed bottom-[136px] right-5 sm:bottom-[152px] sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 bg-primary text-primary-foreground"
       aria-label="Call us"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}

@@ -82,7 +82,7 @@ const Footer = () => (
             </li>
             <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
               <MapPin size={15} className="text-primary mt-0.5 shrink-0" />
-              Indore, Madhya Pradesh, India
+              Bhopal, Madhya Pradesh, India
             </li>
             <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
               <Clock size={15} className="text-primary mt-0.5 shrink-0" />

@@ -109,11 +109,11 @@ const Contact = () => {
             >
               <div className="flex items-center justify-center gap-2 text-muted-foreground mb-2">
                 <MapPin size={16} className="text-primary" />
-                <span className="text-sm">Indore, Madhya Pradesh, India</span>
+                <span className="text-sm">Bhopal, Madhya Pradesh, India</span>
               </div>
               <div className="rounded-xl overflow-hidden h-48 sm:h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.74672498008!2d75.69835529999999!3d22.72370845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1679000000000"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.74672498008!2d77.41!3d23.26!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c428f8fd68fbd%3A0x2155716d572d4f8!2sBhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1679000000000"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
