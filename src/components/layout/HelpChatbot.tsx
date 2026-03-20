@@ -83,7 +83,7 @@ const HelpChatbot = () => {
 
     if (option.action === "whatsapp") {
       const msg = option.whatsappMsg || "Hi ENGPROOF, I need help.";
-      addMessage("Opening WhatsApp for you... 💬", "bot");
+      addMessage("Opening WhatsApp for you... 💬\n\nThank you for choosing ENGPROOF! 🙏", "bot");
       setTimeout(() => {
         window.open(`https://wa.me/917489741225?text=${encodeURIComponent(msg)}`, "_blank");
       }, 500);
