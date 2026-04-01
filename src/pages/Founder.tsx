@@ -52,7 +52,7 @@ const Founder = () => (
                 transition={{ delay: 0.4, duration: 0.4 }}
               >
                 <Award size={16} className="inline mr-1.5 -mt-0.5" />
-                Founder & CEO
+                Founder
               </motion.div>
             </div>
           </motion.div>
