@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, ChevronDown, MessageCircle, ChevronRight, Home, Info, Briefcase, FolderOpen, PenSquare, Phone as PhoneIcon, X, Monitor, Smartphone, Camera, CreditCard, Mic } from "lucide-react";
+import { Menu, ChevronDown, MessageCircle, ChevronRight, Home, Info, Briefcase, FolderOpen, PenSquare, Phone as PhoneIcon, X, Monitor, Smartphone, Camera, CreditCard, Mic, UserCircle } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -25,6 +25,7 @@ const navLinks = [
   { name: "About", href: "/about", icon: Info },
   { name: "Services", href: "/services", hasDropdown: true, icon: Briefcase },
   { name: "Portfolio", href: "/portfolio", icon: FolderOpen },
+  { name: "Founder", href: "/founder", icon: UserCircle },
   { name: "Blog", href: "/blog", icon: PenSquare },
   { name: "Contact", href: "/contact", icon: PhoneIcon },
 ];
