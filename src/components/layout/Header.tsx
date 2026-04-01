@@ -25,6 +25,7 @@ const navLinks = [
   { name: "About", href: "/about", icon: Info },
   { name: "Services", href: "/services", hasDropdown: true, icon: Briefcase },
   { name: "Portfolio", href: "/portfolio", icon: FolderOpen },
+  { name: "Founder", href: "/founder", icon: UserCircle },
   { name: "Blog", href: "/blog", icon: PenSquare },
   { name: "Contact", href: "/contact", icon: PhoneIcon },
 ];
