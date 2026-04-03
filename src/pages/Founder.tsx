@@ -64,9 +64,10 @@ const Founder = () => (
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="badge-primary mb-4">👤 Meet Our Founder</div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-              The <span className="teal-gradient-text">Visionary</span> Behind ENGPROOF
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-2">
+              <span className="teal-gradient-text">Chetan Patle</span>
             </h1>
+            <p className="text-lg sm:text-xl font-semibold text-muted-foreground mb-4">Founder, ENGPROOF</p>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
               A dedicated and visionary leader with strong experience in team management, marketing, and project execution. Passionate about building innovative solutions and leading teams toward success.
             </p>
