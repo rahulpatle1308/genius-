@@ -138,7 +138,7 @@ const Founder = () => (
           <p className="text-muted-foreground leading-relaxed">
             "Our vision is to empower businesses across India with cutting-edge technology and security solutions. We believe every business, regardless of size, deserves enterprise-grade protection and digital transformation. At ENGPROOF, we don't just deliver projects — we build lasting partnerships."
           </p>
-          <p className="text-sm text-primary font-semibold italic mt-4">— Founder, ENGPROOF</p>
+          <p className="text-sm text-primary font-semibold italic mt-4">— Chetan Patle, Founder, ENGPROOF</p>
         </motion.div>
       </div>
     </section>
