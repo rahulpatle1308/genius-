@@ -78,6 +78,17 @@ const Founder = () => (
               <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl text-sm font-semibold">
                 <Lightbulb size={16} /> Innovation Driven
               </div>
+              <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl text-sm font-semibold">
+                <Award size={16} /> Engineering Graduate
+              </div>
+            </div>
+            <div className="mt-5 p-4 rounded-2xl bg-secondary/50 border border-border">
+              <h3 className="font-bold text-foreground text-sm mb-2">🎓 Education & Expertise</h3>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>• <span className="font-semibold text-foreground">Engineering</span> — Technical Foundation</li>
+                <li>• <span className="font-semibold text-foreground">Marketing</span> — Brand & Growth Strategy</li>
+                <li>• <span className="font-semibold text-foreground">Education</span> — Continuous Learning & Development</li>
+              </ul>
             </div>
           </motion.div>
         </div>
