@@ -64,9 +64,10 @@ const Founder = () => (
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="badge-primary mb-4">👤 Meet Our Founder</div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-              The <span className="teal-gradient-text">Visionary</span> Behind ENGPROOF
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-2">
+              <span className="teal-gradient-text">Chetan Patle</span>
             </h1>
+            <p className="text-lg sm:text-xl font-semibold text-muted-foreground mb-4">Founder, ENGPROOF</p>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
               A dedicated and visionary leader with strong experience in team management, marketing, and project execution. Passionate about building innovative solutions and leading teams toward success.
             </p>
@@ -77,6 +78,17 @@ const Founder = () => (
               <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl text-sm font-semibold">
                 <Lightbulb size={16} /> Innovation Driven
               </div>
+              <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl text-sm font-semibold">
+                <Award size={16} /> Engineering Graduate
+              </div>
+            </div>
+            <div className="mt-5 p-4 rounded-2xl bg-secondary/50 border border-border">
+              <h3 className="font-bold text-foreground text-sm mb-2">🎓 Education & Expertise</h3>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>• <span className="font-semibold text-foreground">Engineering</span> — Technical Foundation</li>
+                <li>• <span className="font-semibold text-foreground">Marketing</span> — Brand & Growth Strategy</li>
+                <li>• <span className="font-semibold text-foreground">Education</span> — Continuous Learning & Development</li>
+              </ul>
             </div>
           </motion.div>
         </div>
@@ -126,7 +138,7 @@ const Founder = () => (
           <p className="text-muted-foreground leading-relaxed">
             "Our vision is to empower businesses across India with cutting-edge technology and security solutions. We believe every business, regardless of size, deserves enterprise-grade protection and digital transformation. At ENGPROOF, we don't just deliver projects — we build lasting partnerships."
           </p>
-          <p className="text-sm text-primary font-semibold italic mt-4">— Founder, ENGPROOF</p>
+          <p className="text-sm text-primary font-semibold italic mt-4">— Chetan Patle, Founder, ENGPROOF</p>
         </motion.div>
       </div>
     </section>
