@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 import { Lock, Scale, Star, Shield } from "lucide-react";
 
 const values = [
-  { icon: Lock, title: "Confidentiality First", desc: "All client information protected by NDAs. Your data never leaves our secure systems." },
-  { icon: Scale, title: "Uncompromising Integrity", desc: "Transparent pricing, no hidden costs. What we quote is what you pay." },
-  { icon: Star, title: "24/7 Availability", desc: "Round-the-clock emergency support for all our security and technology clients." },
+  { icon: Lock, title: "Creative Excellence", desc: "We transform ideas into powerful visual experiences with precision and passion." },
+  { icon: Scale, title: "Technical Expertise", desc: "Combining design thinking with high-quality production and strategy." },
+  { icon: Star, title: "Fast Delivery", desc: "Timely execution with high-quality output and professional commitment." },
 ];
 
 const timeline = [
-  { period: "2025", event: "ENGPROOF Established in Indore" },
-  { period: "2025 Q2", event: "First 10 Business Clients Onboarded" },
-  { period: "2025 Q3", event: "Expanded to CCTV Security Services" },
-  { period: "2025 Q4", event: "50+ Projects Completed" },
-  { period: "2026", event: "Serving Clients Across India" },
+  { period: "2015", event: "Genius Pvt. Ltd. Foundation in Bhopal" },
+  { period: "2018", event: "Expanded to Premium Offset Printing" },
+  { period: "2020", event: "Launched Digital Branding & Ads Solutions" },
+  { period: "2022", event: "Serviced 500+ Local & National Brands" },
+  { period: "2026", event: "Leading Branding Partner in Madhya Pradesh" },
 ];
 
 const About = () => (
@@ -22,20 +22,20 @@ const About = () => (
     <section className="section-padding bg-gradient-to-b from-accent/30 to-background">
       <div className="container-wide mx-auto text-center max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="badge-primary mb-6">🔷 About ENGPROOF</div>
+          <div className="badge-primary mb-6">🔷 About Genius Pvt. Ltd.</div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-            Securing & Digitizing <span className="teal-gradient-text">Indian Businesses</span> Since 2025
+            Building Brands That People <span className="teal-gradient-text">Remember</span>
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-            We combine enterprise-grade technology with personalized service to deliver complete solutions under one roof.
+            From creative graphic design to premium offset printing, we help businesses grow with impactful design and smart execution.
           </p>
         </motion.div>
       </div>
     </section>
 
-    {/* Mission */}
+    {/* Mission & Vision */}
     <section className="section-padding bg-secondary/30">
-      <div className="container-wide mx-auto max-w-4xl">
+      <div className="container-wide mx-auto max-w-4xl space-y-8">
         <motion.div
           className="glass-card p-6 sm:p-8 md:p-12"
           initial={{ opacity: 0, y: 20 }}
@@ -45,9 +45,13 @@ const About = () => (
         >
           <h2 className="text-2xl font-extrabold text-foreground mb-6">Our Mission</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            ENGPROOF was founded in Indore, Madhya Pradesh with a simple vision: businesses shouldn't have to coordinate with multiple vendors for their technology and security needs. We provide comprehensive digital and physical security solutions with unwavering commitment to confidentiality, integrity, and availability.
+            To deliver creative excellence through innovative design, premium printing, and powerful branding solutions that help businesses stand out and grow faster.
           </p>
-          <p className="text-sm text-primary font-semibold italic">— ENGPROOF Team</p>
+          <h2 className="text-2xl font-extrabold text-foreground mb-6 mt-10">Our Vision</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            To become one of India’s most trusted creative branding and printing companies by transforming business ideas into visual success stories.
+          </p>
+          <p className="text-sm text-primary font-semibold italic">— Genius Pvt. Ltd. Team</p>
         </motion.div>
       </div>
     </section>

@@ -19,8 +19,8 @@ const MobileAppDevelopment = () => (
     <ServiceDetailPage
       emoji="📱"
       title="Mobile App Development"
-      subtitle="Native and cross-platform apps with enterprise-grade backend"
-      stats={["iOS & Android", "Real-time Sync", "Secure Backend"]}
+      subtitle="Smart and scalable mobile applications for Android & iOS"
+      stats={["Native & Hybrid", "Secure Backend", "Admin Panel Included"]}
       services={services}
       faqs={faqs}
       whatsappPrefix="Mobile App Development"

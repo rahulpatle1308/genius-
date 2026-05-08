@@ -4,9 +4,9 @@ import { ArrowRight, Phone } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
-  { value: "5+", label: "Projects" },
-  { value: "24/7", label: "Support" },
-  { value: "100%", label: "Confidentiality" },
+  { value: "500+", label: "Projects Done" },
+  { value: "24/7", label: "Client Support" },
+  { value: "100%", label: "Satisfaction" },
 ];
 
 const containerVariants = {
@@ -25,7 +25,7 @@ const itemVariants = {
 const HeroSection = () => (
   <section className="relative overflow-hidden">
     <div className="absolute inset-0 z-0">
-      <img src={heroBg} alt="Technology workspace" className="w-full h-full object-cover" />
+      <img src={heroBg} alt="Creative Branding Workspace" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
     </div>
 
@@ -38,21 +38,19 @@ const HeroSection = () => (
             animate="visible"
           >
             <motion.div variants={itemVariants}>
-              <div className="badge-primary mb-6">⭐ Trusted by Businesses Across India</div>
+              <div className="badge-primary mb-6">⭐ Creative Thinking Made Visual</div>
             </motion.div>
             <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-foreground">
-              Enterprise-Grade{" "}
-              <span className="teal-gradient-text">Technology</span> &{" "}
-              <span className="teal-gradient-text">Security</span> Solutions
+              We Build <span className="teal-gradient-text">Brands</span> That People <span className="teal-gradient-text">Remember</span>
             </motion.h1>
             <motion.p variants={itemVariants} className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              Complete digital and physical security under one roof. From website development to CCTV installation, we protect and grow your business.
+              At Genius Pvt. Ltd., we transform ideas into powerful visual experiences. From creative graphic design to premium printing and advertising solutions.
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-10">
               <Link to="/services" className="btn-teal inline-flex items-center justify-center gap-2 text-base py-3.5 px-7">
-                Explore Services <ArrowRight size={18} />
+                Our Services <ArrowRight size={18} />
               </Link>
-              <a href="tel:+917489741225" className="btn-outline-light text-center inline-flex items-center justify-center gap-2 text-base py-3.5 px-7">
+              <a href="tel:+919770034731" className="btn-outline-light text-center inline-flex items-center justify-center gap-2 text-base py-3.5 px-7">
                 <Phone size={18} /> Call Now
               </a>
             </motion.div>

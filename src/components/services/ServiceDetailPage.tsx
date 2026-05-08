@@ -95,12 +95,10 @@ const ServiceDetailPage = ({ emoji, title, subtitle, stats, services, faqs, what
                     <div className="mono-text text-lg font-bold text-primary">{s.price}</div>
                     <div className="text-xs text-muted-foreground">Timeline: {s.timeline}</div>
                     <a
-                      href={`https://wa.me/917489741225?text=${encodeURIComponent(`Hi ENGPROOF, I'm interested in ${s.name} (${whatsappPrefix}). Can we discuss?`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="whatsapp-btn text-xs inline-flex"
+                      href="tel:+919770034731"
+                      className="btn-teal text-xs inline-flex py-2.5"
                     >
-                      {emoji} Book Now
+                      Call Now
                     </a>
                   </div>
                 </div>

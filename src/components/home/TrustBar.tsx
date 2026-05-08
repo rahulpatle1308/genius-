@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const logos = Array.from({ length: 6 }, (_, i) => `Client ${i + 1}`);
+const logos = ["EcoFresh", "TechCorp", "Heritage", "GlobalSol", "LifeCare", "InnoBrand"];
 
 const TrustBar = () => (
   <section className="py-10 sm:py-12 border-y border-border/50">

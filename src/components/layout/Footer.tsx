@@ -8,19 +8,21 @@ const Footer = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
         {/* Brand */}
         <div>
-          <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <img src={logo} alt="ENGPROOF Logo" className="h-10 w-auto" />
+          <Link to="/" className="inline-flex items-center gap-2 mb-4 group">
+            <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent shadow-md shadow-primary/10">
+              <span className="text-sm font-black text-white italic">G</span>
+            </div>
             <div>
               <span className="text-xl font-extrabold tracking-tight text-foreground">
-                ENG<span className="teal-gradient-text">PROOF</span>
+                Genius<span className="teal-gradient-text"> Pvt. Ltd.</span>
               </span>
               <p className="text-[8px] uppercase tracking-[0.15em] text-muted-foreground -mt-0.5">
-                Protect Solution
+                Creative Thinking Made Visual
               </p>
             </div>
           </Link>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Enterprise technology and security solutions since 2025. Protecting and growing businesses across India.
+            At Genius Pvt. Ltd., we transform ideas into powerful visual experiences. From creative graphic design to premium branding solutions — we help businesses grow with impactful design.
           </p>
         </div>
 
@@ -49,11 +51,11 @@ const Footer = () => (
           <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-4">Our Services</h4>
           <ul className="space-y-2.5">
             {[
-              { name: "Website Development", href: "/services/website-development" },
+              { name: "Creative Designing", href: "/services/creative-designing" },
+              { name: "Offset Printing", href: "/services/offset-printing" },
+              { name: "Digital Marketing", href: "/services/digital-marketing" },
+              { name: "LED Board Solutions", href: "/services/led-boards" },
               { name: "App Development", href: "/services/mobile-app-development" },
-              { name: "CCTV & Security", href: "/services/cctv-security" },
-              { name: "Digital ID Cards", href: "/services/digital-id-cards" },
-              { name: "Event Management", href: "/services/event-management" },
             ].map((l) => (
               <li key={l.name}>
                 <Link to={l.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -70,23 +72,23 @@ const Footer = () => (
           <ul className="space-y-3">
             <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
               <Phone size={15} className="text-primary mt-0.5 shrink-0" />
-              <a href="tel:+917489741225" className="hover:text-primary transition-colors">+91 74897 41225</a>
+              <a href="tel:+919770034731" className="hover:text-primary transition-colors">+91 97700 34731</a>
             </li>
             <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
               <Mail size={15} className="text-primary mt-0.5 shrink-0" />
-              <a href="mailto:engproof25@gmail.com" className="hover:text-primary transition-colors">engproof25@gmail.com</a>
+              <a href="mailto:nitin.deswadi@gmail.com" className="hover:text-primary transition-colors">nitin.deswadi@gmail.com</a>
             </li>
             <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
               <MessageCircle size={15} className="text-primary mt-0.5 shrink-0" />
-              <a href="https://wa.me/917489741225" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp Us</a>
+              <a href="https://wa.me/919770034731" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp Us</a>
             </li>
             <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
               <MapPin size={15} className="text-primary mt-0.5 shrink-0" />
-              Bhopal, Madhya Pradesh, India
+              184 LIG B Sector Rajeev Nagar Bhopal
             </li>
             <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
               <Clock size={15} className="text-primary mt-0.5 shrink-0" />
-              <span>Mon-Sat: 8AM-8PM<br />Emergency: 24/7</span>
+              <span>Mon-Sat: 10AM-8PM<br />Bhopal, MP</span>
             </li>
           </ul>
         </div>
@@ -96,13 +98,14 @@ const Footer = () => (
     {/* Bottom */}
     <div className="border-t border-border">
       <div className="container-wide mx-auto px-4 md:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
-        <span>© 2025 ENGPROOF. All Rights Reserved.</span>
+        <span>© 2026 Genius Pvt. Ltd. All Rights Reserved.</span>
         <div className="flex gap-4">
           <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
           <Link to="/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link>
         </div>
       </div>
     </div>
+
   </footer>
 );
 

@@ -13,11 +13,12 @@ import {
 import logo from "@/assets/logo.png";
 
 const services = [
-  { name: "Website Development", href: "/services/website-development", icon: "📘", lucideIcon: Monitor },
+  { name: "Creative Designing", href: "/services/creative-designing", icon: "🎨", lucideIcon: Monitor },
+  { name: "Offset Printing", href: "/services/offset-printing", icon: "🖨️", lucideIcon: CreditCard },
+  { name: "Digital Marketing", href: "/services/digital-marketing", icon: "🌐", lucideIcon: Smartphone },
+  { name: "LED Board Solutions", href: "/services/led-boards", icon: "💡", lucideIcon: Camera },
   { name: "Mobile App Development", href: "/services/mobile-app-development", icon: "📱", lucideIcon: Smartphone },
-  { name: "CCTV & Security", href: "/services/cctv-security", icon: "🔒", lucideIcon: Camera },
-  { name: "Digital ID Cards", href: "/services/digital-id-cards", icon: "🆔", lucideIcon: CreditCard },
-  { name: "Event Management", href: "/services/event-management", icon: "🎤", lucideIcon: Mic },
+  { name: "SEO Services", href: "/services/seo-services", icon: "🔍", lucideIcon: PenSquare },
 ];
 
 const navLinks = [
@@ -50,14 +51,17 @@ const Header = () => {
       <div className="container-wide mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="ENGPROOF Logo" className="h-10 md:h-12 w-auto" />
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent shadow-lg shadow-primary/20 transition-transform group-hover:scale-105">
+              <span className="text-xl md:text-2xl font-black text-white italic">G</span>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full border-2 border-background animate-pulse" />
+            </div>
             <div className="flex flex-col">
               <span className="text-lg md:text-xl font-extrabold tracking-tight text-foreground leading-none">
-                ENG<span className="teal-gradient-text">PROOF</span>
+                Genius<span className="teal-gradient-text"> Pvt. Ltd.</span>
               </span>
               <span className="text-[8px] uppercase tracking-[0.15em] text-muted-foreground leading-none">
-                Protect Solution
+                Creative Thinking Made Visual
               </span>
             </div>
           </Link>
@@ -136,14 +140,14 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
             <a
-              href="tel:+917489741225"
+              href="tel:+919770034731"
               className="btn-outline-light text-xs inline-flex items-center gap-2"
             >
               <PhoneIcon size={14} />
               Call Now
             </a>
             <a
-              href="https://wa.me/917489741225"
+              href="https://wa.me/919770034731"
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-btn text-xs"
@@ -172,13 +176,15 @@ const Header = () => {
               <SheetHeader className="p-5 pb-4 border-b border-border">
                 <SheetTitle className="text-left">
                   <div className="flex items-center gap-3">
-                    <img src={logo} alt="ENGPROOF Logo" className="h-10 w-auto" />
+                    <div className="w-9 h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent shadow-md shadow-primary/10">
+                      <span className="text-lg font-black text-white italic">G</span>
+                    </div>
                     <div>
                       <span className="text-lg font-extrabold tracking-tight text-foreground block leading-none">
-                        ENG<span className="teal-gradient-text">PROOF</span>
+                        Genius<span className="teal-gradient-text"> Pvt. Ltd.</span>
                       </span>
                       <p className="text-[8px] uppercase tracking-[0.15em] text-muted-foreground leading-none mt-0.5">
-                        Protect Solution
+                        Creative Thinking Made Visual
                       </p>
                     </div>
                   </div>
@@ -298,13 +304,13 @@ const Header = () => {
 
                 <div className="border-t border-border mt-4 pt-4 px-5 space-y-2.5">
                   <a
-                    href="tel:+917489741225"
+                    href="tel:+919770034731"
                     className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold border border-primary/20 text-primary bg-primary/5 transition-all hover:bg-primary/10"
                   >
                     <PhoneIcon size={16} /> Call Now
                   </a>
                   <a
-                    href="https://wa.me/917489741225"
+                    href="https://wa.me/919770034731"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="whatsapp-btn text-xs w-full justify-center"

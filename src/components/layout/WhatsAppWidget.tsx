@@ -5,7 +5,7 @@ const FloatingWidgets = () => (
   <>
     {/* Call Button - above chatbot */}
     <motion.a
-      href="tel:+917489741225"
+      href="tel:+919770034731"
       className="fixed bottom-[136px] right-5 sm:bottom-[152px] sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 bg-primary text-primary-foreground"
       aria-label="Call us"
       initial={{ scale: 0, opacity: 0 }}
@@ -18,7 +18,7 @@ const FloatingWidgets = () => (
 
     {/* WhatsApp Button */}
     <motion.a
-      href="https://wa.me/917489741225?text=Hi%20ENGPROOF%2C%20I%27m%20interested%20in%20your%20services."
+      href="https://wa.me/919770034731?text=Hi%20Genius%20Pvt.%20Ltd.%2C%20I%27m%20interested%20in%20your%20services."
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 bg-primary text-primary-foreground"

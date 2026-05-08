@@ -8,15 +8,15 @@ import projectCctv from "@/assets/project-cctv.jpg";
 import projectId from "@/assets/project-idcard.jpg";
 import projectEvent from "@/assets/project-event.jpg";
 
-const categories = ["All", "Websites", "Apps", "CCTV", "ID Cards", "Events"];
+const categories = ["All", "Branding", "Printing", "Digital Ads", "Signage"];
 
 const projects = [
-  { title: "TechStart E-commerce Platform", category: "Websites", client: "TechStart Solutions", desc: "Full e-commerce website with payment integration and inventory management.", impact: "200% increase in online sales", image: projectWeb },
-  { title: "SecureHome Surveillance System", category: "CCTV", client: "SecureHome Properties", desc: "32-camera office security system with remote monitoring.", impact: "Zero security incidents in 6 months", image: projectCctv },
-  { title: "EduFirst Smart ID System", category: "ID Cards", client: "EduFirst Academy", desc: "QR-based smart ID cards for 500+ students with attendance tracking.", impact: "90% faster attendance process", image: projectId },
-  { title: "GreenMart Shopping App", category: "Apps", client: "GreenMart Organics", desc: "Cross-platform shopping app with delivery tracking.", impact: "5,000+ downloads in first month", image: projectApp },
-  { title: "InnoTech Annual Conference", category: "Events", client: "InnoTech Corp", desc: "Full event management for 300+ attendees with live streaming.", impact: "98% attendee satisfaction", image: projectEvent },
-  { title: "LegalPro Corporate Website", category: "Websites", client: "LegalPro Associates", desc: "Multi-page corporate website with blog and client portal.", impact: "150% increase in lead generation", image: projectWeb },
+  { title: "EcoFriendly Brand Identity", category: "Branding", client: "EcoFriendly Organics", desc: "Complete logo and brand guide with sustainable packaging design.", impact: "Successfully launched in 10 cities", image: projectWeb },
+  { title: "Premium Corporate Catalogues", category: "Printing", client: "InnoTech Corp", desc: "1000+ luxury brochures with spot UV and matte finish.", impact: "Zero printing errors across bulk order", image: projectCctv },
+  { title: "Smart City LED Signage", category: "Signage", client: "Municipal Corp", desc: "Durable ACP LED boards across major city squares.", impact: "High visibility and energy efficient", image: projectId },
+  { title: "Global Reach Digital Ads", category: "Digital Ads", client: "Global Solutions", desc: "Full performance marketing and social media management.", impact: "50% increase in lead generation", image: projectApp },
+  { title: "Heritage Event Branding", category: "Branding", client: "Heritage Foundation", desc: "End-to-end branding for a 3-day cultural festival.", impact: "Attracted 10,000+ visitors", image: projectEvent },
+  { title: "Pharma Packaging Design", category: "Branding", client: "LifeCare Pharma", desc: "Secure and attractive medicine box and label designs.", impact: "Compliant with all health regulations", image: projectWeb },
 ];
 
 const Portfolio = () => {
@@ -81,18 +81,10 @@ const Portfolio = () => {
                     <div className="mono-text text-xs text-primary font-bold mb-4">{p.impact}</div>
                     <div className="flex gap-2">
                       <a
-                        href={`https://wa.me/917489741225?text=${encodeURIComponent(`Hi ENGPROOF, I saw your ${p.title} project. I'm interested in similar work.`)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-teal text-xs flex-1 text-center"
+                        href="tel:+919770034731"
+                        className="btn-teal text-xs flex-1 text-center py-2.5"
                       >
-                        Get Similar
-                      </a>
-                      <a
-                        href="tel:+917489741225"
-                        className="flex items-center justify-center w-10 h-10 rounded-xl border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-all"
-                      >
-                        <Phone size={16} />
+                        Call Now
                       </a>
                     </div>
                   </div>

@@ -6,11 +6,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import WebsiteDevelopment from "./pages/services/WebsiteDevelopment";
+import CreativeDesigning from "./pages/services/CreativeDesigning";
+import OffsetPrinting from "./pages/services/OffsetPrinting";
+import FlexPrinting from "./pages/services/FlexPrinting";
+import FabricWork from "./pages/services/FabricWork";
+import AdvertisingSolutions from "./pages/services/AdvertisingSolutions";
+import DigitalMarketing from "./pages/services/DigitalMarketing";
+import LEDBoardSolutions from "./pages/services/LEDBoardSolutions";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
-import CCTVSecurity from "./pages/services/CCTVSecurity";
-import DigitalIDCards from "./pages/services/DigitalIDCards";
-import EventManagement from "./pages/services/EventManagement";
+import SEOServices from "./pages/services/SEOServices";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -31,11 +35,15 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/website-development" element={<WebsiteDevelopment />} />
+          <Route path="/services/creative-designing" element={<CreativeDesigning />} />
+          <Route path="/services/offset-printing" element={<OffsetPrinting />} />
+          <Route path="/services/flex-printing" element={<FlexPrinting />} />
+          <Route path="/services/fabric-work" element={<FabricWork />} />
+          <Route path="/services/advertising-solutions" element={<AdvertisingSolutions />} />
+          <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+          <Route path="/services/led-boards" element={<LEDBoardSolutions />} />
           <Route path="/services/mobile-app-development" element={<MobileAppDevelopment />} />
-          <Route path="/services/cctv-security" element={<CCTVSecurity />} />
-          <Route path="/services/digital-id-cards" element={<DigitalIDCards />} />
-          <Route path="/services/event-management" element={<EventManagement />} />
+          <Route path="/services/seo-services" element={<SEOServices />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />

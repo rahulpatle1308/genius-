@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { Phone, FileText, PenTool, Rocket, CheckCircle, Wrench } from "lucide-react";
 
 const steps = [
-  { icon: Phone, num: "01", title: "Consultation", desc: "Free discovery call" },
-  { icon: FileText, num: "02", title: "Proposal", desc: "Detailed project plan" },
-  { icon: PenTool, num: "03", title: "Agreement", desc: "NDA + contract" },
-  { icon: Rocket, num: "04", title: "Execution", desc: "Development/installation" },
-  { icon: CheckCircle, num: "05", title: "Delivery", desc: "Go-live support" },
-  { icon: Wrench, num: "06", title: "Support", desc: "24/7 maintenance" },
+  { icon: Phone, num: "01", title: "Discussion", desc: "Understanding your vision" },
+  { icon: FileText, num: "02", title: "Conceptualizing", desc: "Drafting the first ideas" },
+  { icon: PenTool, num: "03", title: "Designing", desc: "Creating the visual magic" },
+  { icon: Rocket, num: "04", title: "Production", desc: "Printing & execution" },
+  { icon: CheckCircle, num: "05", title: "Quality Check", desc: "Ensuring perfection" },
+  { icon: Wrench, num: "06", title: "Delivery", desc: "Bringing your brand to life" },
 ];
 
 const ProcessSection = () => (

@@ -1,67 +1,69 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Monitor, Smartphone, Camera, CreditCard, Mic } from "lucide-react";
+import { Monitor, Smartphone, Camera, CreditCard, Mic, Phone } from "lucide-react";
 
 const categories = [
   {
     icon: Monitor,
-    emoji: "📘",
-    title: "Website Development",
-    href: "/services/website-development",
+    emoji: "🎨",
+    title: "Creative Designing",
+    href: "/services/creative-designing",
     services: [
-      { name: "Static Website", price: "Starting ₹15,000", features: ["5 pages", "SEO ready", "Mobile responsive"] },
-      { name: "Dynamic Website", price: "Starting ₹1,00,000", features: ["Admin panel", "CMS", "Database"] },
-      { name: "E-commerce Website", price: "Starting ₹1,50,000", features: ["Payment gateway", "Product management"] },
-      { name: "Corporate Website", price: "Custom Quote", features: ["Enterprise grade", "Scalable"] },
-      { name: "Custom Web App", price: "Custom Quote", features: ["CRM", "Automation", "APIs"] },
-    ],
-  },
-  {
-    icon: Smartphone,
-    emoji: "📱",
-    title: "Mobile App Development",
-    href: "/services/mobile-app-development",
-    services: [
-      { name: "Android App", price: "Starting ₹1,50,000", features: ["Native Kotlin/Java", "Play Store"] },
-      { name: "iOS App", price: "Starting ₹1,80,000", features: ["Native Swift", "App Store"] },
-      { name: "Business App", price: "Custom Quote", features: ["Service booking", "Management"] },
-      { name: "E-commerce App", price: "Custom Quote", features: ["Shopping", "Payments"] },
-    ],
-  },
-  {
-    icon: Camera,
-    emoji: "🔒",
-    title: "CCTV & Security Systems",
-    href: "/services/cctv-security",
-    services: [
-      { name: "Home CCTV", price: "Starting ₹8,000", features: ["Indoor/outdoor", "Night vision"] },
-      { name: "Office Security", price: "Starting ₹15,000", features: ["HD cameras", "DVR/NVR"] },
-      { name: "Wireless CCTV", price: "Starting ₹12,000", features: ["WiFi cameras", "Cloud backup"] },
-      { name: "Maintenance", price: "Starting ₹2,000/mo", features: ["Regular inspection", "Upgrades"] },
+      { name: "Logo Design", price: "Custom Quote", features: ["Brand identity", "Vector files"] },
+      { name: "Visiting Cards", price: "Starting ₹500", features: ["Premium paper", "Matte/Gloss"] },
+      { name: "Brochures", price: "Custom Quote", features: ["Tri-fold", "Bi-fold", "Z-fold"] },
+      { name: "Social Media", price: "Starting ₹5,000", features: ["Posters", "Creatives", "Ads"] },
+      { name: "Packaging", price: "Custom Quote", features: ["Product design", "Box labels"] },
     ],
   },
   {
     icon: CreditCard,
-    emoji: "🆔",
-    title: "Digital ID Card Services",
-    href: "/services/digital-id-cards",
+    emoji: "🖨️",
+    title: "Offset Printing",
+    href: "/services/offset-printing",
     services: [
-      { name: "Corporate ID", price: "Starting ₹50/card", features: ["Professional design", "Company logo"] },
-      { name: "School ID", price: "Starting ₹50/card", features: ["Student/staff", "Library card"] },
-      { name: "Smart QR ID", price: "Starting ₹80/card", features: ["QR code", "Digital verification"] },
-      { name: "PVC Printed ID", price: "Starting ₹100/card", features: ["High-quality PVC", "Full color"] },
+      { name: "Business Cards", price: "Starting ₹200", features: ["Bulk printing", "Finishing"] },
+      { name: "Bill Books", price: "Starting ₹150", features: ["Duplicate/Triplicate", "Serial numbering"] },
+      { name: "Pamphlets", price: "Starting ₹1,000", features: ["A4/A5", "Color printing"] },
+      { name: "Catalogues", price: "Custom Quote", features: ["Magazines", "Profiles"] },
+      { name: "Stickers", price: "Starting ₹2/pc", features: ["Custom shapes", "Adhesive"] },
+    ],
+  },
+  {
+    icon: Camera,
+    emoji: "🚩",
+    title: "Flex Printing",
+    href: "/services/flex-printing",
+    services: [
+      { name: "Flex Banners", price: "Starting ₹10/sqft", features: ["Outdoor durable", "Quality ink"] },
+      { name: "Hoardings", price: "Custom Quote", features: ["Large scale", "Installation"] },
+      { name: "Backlit Boards", price: "Custom Quote", features: ["Glow sign", "LED inside"] },
+      { name: "Vinyl Printing", price: "Starting ₹35/sqft", features: ["Self-adhesive", "Indoor/Outdoor"] },
     ],
   },
   {
     icon: Mic,
-    emoji: "🎤",
-    title: "Event Management",
-    href: "/services/event-management",
+    emoji: "📢",
+    title: "Advertising Solutions",
+    href: "/services/advertising-solutions",
     services: [
-      { name: "Corporate Events", price: "Custom Quote", features: ["Conferences", "Seminars", "Launches"] },
-      { name: "Registration Systems", price: "Starting ₹15,000", features: ["QR check-in", "Digital certificates"] },
-      { name: "Technical Support", price: "Starting ₹10,000", features: ["Sound", "Lighting", "Streaming"] },
+      { name: "Outdoor Ads", price: "Custom Quote", features: ["Billboard", "Bus shelter"] },
+      { name: "Shop Branding", price: "Custom Quote", features: ["ACP LED", "Front branding"] },
+      { name: "Event Promotion", price: "Custom Quote", features: ["Corporate", "Political"] },
+      { name: "Product Launch", price: "Custom Quote", features: ["Branding support"] },
+    ],
+  },
+  {
+    icon: Smartphone,
+    emoji: "🌐",
+    title: "Digital Marketing & Apps",
+    href: "/services/digital-marketing",
+    services: [
+      { name: "Social Media Mgmt", price: "Starting ₹8,000/mo", features: ["Daily posts", "Engagement"] },
+      { name: "Google Ads", price: "Custom Quote", features: ["PPC", "Lead gen"] },
+      { name: "SEO Services", price: "Starting ₹10,000/mo", features: ["Rankings", "Website audit"] },
+      { name: "App Development", price: "Starting ₹1,50,000", features: ["Android/iOS", "Admin panel"] },
     ],
   },
 ];
@@ -116,12 +118,10 @@ const Services = () => (
                       </div>
                     </div>
                     <a
-                      href={`https://wa.me/917489741225?text=${encodeURIComponent(`Hi ENGPROOF, I'm interested in ${s.name}. Can we discuss?`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="whatsapp-btn text-xs justify-center w-full"
+                      href="tel:+919770034731"
+                      className="btn-teal text-xs justify-center w-full py-2.5 inline-flex items-center gap-2"
                     >
-                      {cat.emoji} Book Now
+                      <Phone size={14} /> Call Now
                     </a>
                   </motion.div>
                 ))}

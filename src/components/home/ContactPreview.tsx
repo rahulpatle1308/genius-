@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import { Send, MessageCircle } from "lucide-react";
 
 const serviceOptions = [
-  "Website Development",
-  "Mobile App Development",
-  "CCTV & Security",
-  "Digital ID Cards",
-  "Event Management",
+  "Creative Designing",
+  "Offset Printing",
+  "Flex Printing",
+  "Advertising Solutions",
+  "Digital Marketing",
+  "LED Board Solutions",
+  "App Development",
   "Other",
 ];
 
@@ -21,8 +23,8 @@ const ContactPreview = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Hi ENGPROOF,\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nService: ${formData.service}\n\nPlease contact me for a consultation.`;
-    const whatsappUrl = `https://wa.me/917489741225?text=${encodeURIComponent(message)}`;
+    const message = `Hi Genius Pvt. Ltd.,\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nService: ${formData.service}\n\nPlease contact me for a consultation.`;
+    const whatsappUrl = `https://wa.me/919770034731?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -38,9 +40,9 @@ const ContactPreview = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3">
-              Ready to <span className="teal-gradient-text">Secure & Grow</span> Your Business?
+              Let’s Build <span className="teal-gradient-text">Something Great</span> Together
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base">Get a free consultation within 24 hours</p>
+            <p className="text-muted-foreground text-sm sm:text-base">Genius Pvt. Ltd. — Your trusted creative partner</p>
           </motion.div>
 
           <motion.form
@@ -93,13 +95,13 @@ const ContactPreview = () => {
             </div>
             <div className="sm:col-span-2 text-center">
               <a
-                href="https://wa.me/917489741225"
+                href="https://wa.me/919770034731"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Send size={14} />
-                Or WhatsApp us directly: +91 74897 41225
+                Or WhatsApp us directly: +91 97700 34731
               </a>
             </div>
           </motion.form>

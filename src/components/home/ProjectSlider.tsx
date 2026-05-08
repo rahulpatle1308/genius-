@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, Phone } from "lucide-react";
 import projectWeb from "@/assets/project-website.jpg";
 import projectApp from "@/assets/project-app.jpg";
 import projectCctv from "@/assets/project-cctv.jpg";
@@ -9,43 +9,43 @@ import projectEvent from "@/assets/project-event.jpg";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    category: "Website Development",
-    client: "TechStart Solutions",
-    desc: "Full-featured online store with payment gateway, inventory management, and admin dashboard.",
-    impact: "200% increase in online sales",
+    title: "EcoFriendly Brand Identity",
+    category: "Branding",
+    client: "EcoFriendly Organics",
+    desc: "Complete logo and brand guide with sustainable packaging design and marketing collaterals.",
+    impact: "Successfully launched in 10 cities",
     image: projectWeb,
   },
   {
-    title: "Business Mobile App",
-    category: "Mobile App Development",
-    client: "GreenMart Organics",
-    desc: "Cross-platform shopping app with real-time delivery tracking and push notifications.",
-    impact: "5,000+ downloads in first month",
-    image: projectApp,
-  },
-  {
-    title: "Office Security System",
-    category: "CCTV & Security",
-    client: "SecureHome Properties",
-    desc: "32-camera surveillance with remote monitoring, night vision, and cloud backup.",
-    impact: "Zero security incidents in 6 months",
+    title: "Corporate Product Catalogues",
+    category: "Offset Printing",
+    client: "InnoTech Corp",
+    desc: "1000+ luxury brochures with spot UV, matte finish, and custom die-cutting.",
+    impact: "Zero printing errors in bulk order",
     image: projectCctv,
   },
   {
-    title: "Smart ID Card System",
-    category: "Digital ID Cards",
-    client: "EduFirst Academy",
-    desc: "QR-based smart ID cards for 500+ students with automated attendance tracking.",
-    impact: "90% faster attendance process",
+    title: "Smart City LED Signage",
+    category: "LED Sign Boards",
+    client: "Municipal Corp",
+    desc: "Durable ACP LED boards across major city squares with high visibility.",
+    impact: "High visibility & Energy efficient",
     image: projectId,
   },
   {
-    title: "Annual Tech Conference",
-    category: "Event Management",
-    client: "InnoTech Corp",
-    desc: "Complete event management for 300+ attendees with live streaming and registration.",
-    impact: "98% attendee satisfaction",
+    title: "Global Reach Digital Ads",
+    category: "Digital Marketing",
+    client: "Global Solutions",
+    desc: "Full performance marketing, social media management, and SEO for international growth.",
+    impact: "50% increase in lead generation",
+    image: projectApp,
+  },
+  {
+    title: "Heritage Event Branding",
+    category: "Branding & Print",
+    client: "Heritage Foundation",
+    desc: "End-to-end branding for a 3-day cultural festival including banners, stalls, and passes.",
+    impact: "Attracted 10,000+ visitors",
     image: projectEvent,
   },
 ];
@@ -145,12 +145,10 @@ const ProjectSlider = () => {
                     </div>
                     <div className="flex gap-3">
                       <a
-                        href={`https://wa.me/917489741225?text=${encodeURIComponent(`Hi ENGPROOF, I saw your ${p.title} project. I'm interested in similar work.`)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="tel:+919770034731"
                         className="btn-teal text-xs inline-flex items-center gap-2"
                       >
-                        <ExternalLink size={14} /> Get Similar Project
+                        <Phone size={14} /> Call for Details
                       </a>
                     </div>
                   </motion.div>

@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Shield, Zap, Trophy, Briefcase } from "lucide-react";
 
 const features = [
-  { icon: Shield, title: "Enterprise Security", desc: "Bank-level data protection for all projects and client information." },
-  { icon: Zap, title: "Instant WhatsApp Booking", desc: "Book any service in 30 seconds through WhatsApp." },
-  { icon: Trophy, title: "Established 2025", desc: "Fresh, modern approach with cutting-edge technology." },
-  { icon: Briefcase, title: "Confidentiality First", desc: "Every project protected by NDA agreements." },
+  { icon: Shield, title: "Complete Branding", desc: "From concept to creation and printing to promotion — managed professionally." },
+  { icon: Trophy, title: "Creative Expertise", desc: "We combine strong design thinking with production quality and strategy." },
+  { icon: Zap, title: "Fast Delivery", desc: "Timely execution with high-quality output and professional commitment." },
+  { icon: Briefcase, title: "Affordable Pricing", desc: "Premium service quality with cost-effective and smart business solutions." },
 ];
 
 const WhyChooseUs = () => (
@@ -19,7 +19,7 @@ const WhyChooseUs = () => (
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
-          Why Choose <span className="teal-gradient-text">ENGPROOF</span>
+          Why Choose <span className="teal-gradient-text">Genius Pvt. Ltd.</span>
         </h2>
       </motion.div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
