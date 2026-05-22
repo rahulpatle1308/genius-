@@ -51,7 +51,7 @@ const Header = () => {
       <div className="container-wide mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          {/* <Link to="/" className="flex items-center gap-2 group">
             <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent shadow-lg shadow-primary/20 transition-transform group-hover:scale-105">
               <span className="text-xl md:text-2xl font-black text-white italic">G</span>
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full border-2 border-background animate-pulse" />
@@ -64,7 +64,19 @@ const Header = () => {
                 Creative Thinking Made Visual
               </span>
             </div>
-          </Link>
+          </Link> */}
+
+    <Link to="/" className="group">
+  <div className="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden transition-transform group-hover:scale-105">
+    
+    <img
+      src="/src/assets/Genius-logo.svg"
+      alt="Logo"
+      className="w-full h-full object-contain"
+    />
+
+  </div>
+</Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
