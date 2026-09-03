@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, ChevronDown, MessageCircle, ChevronRight, Home, Info, Briefcase, FolderOpen, PenSquare, Phone as PhoneIcon, X, Monitor, Smartphone, Camera, CreditCard, Mic, UserCircle } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
+import GeniusLogo from "@/assets/Genius-logo.svg";
 import {
   Sheet,
   SheetContent,
