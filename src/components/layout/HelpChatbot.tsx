@@ -218,7 +218,7 @@ const HelpChatbot = () => {
               <div className="flex items-center gap-2">
                 <img src={logo} alt="ENGPROOF" className="h-8 w-8 rounded-full bg-white/20 p-0.5" />
                 <div>
-                  <p className="text-white text-sm font-bold leading-none">ENGPROOF Help</p>
+                  <p className="text-white text-sm font-bold leading-none">Genius Help</p>
                   <p className="text-white/70 text-[10px]">Usually replies instantly</p>
                 </div>
               </div>
