@@ -71,7 +71,7 @@ const HelpChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "🙏 नमस्ते! Welcome to ENGPROOF. How can I help you today?",
+      text: "🙏 नमस्ते! Welcome to Genius . How can I help you today?",
       sender: "bot",
       options: faqData,
     },
@@ -87,7 +87,7 @@ const HelpChatbot = () => {
   // Speak "Namaste" when chatbot opens
   useEffect(() => {
     if (isOpen) {
-      setTimeout(() => speak("नमस्ते! ENGPROOF में आपका स्वागत है"), 300);
+      setTimeout(() => speak("नमस्ते! Genius  में आपका स्वागत है"), 300);
     }
   }, [isOpen]);
 
@@ -105,7 +105,7 @@ const HelpChatbot = () => {
     addMessage(option.label, "user");
 
     if (option.action === "whatsapp") {
-      const msg = option.whatsappMsg || "Hi ENGPROOF, I need help.";
+      const msg = option.whatsappMsg || "Hi Genius , I need help.";
       addMessage("Opening WhatsApp for you... 💬\n\nThank you for choosing ENGPROOF! 🙏", "bot");
       setTimeout(() => {
         window.open(`https://wa.me/917489741225?text=${encodeURIComponent(msg)}`, "_blank");
